@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/gx_lifeway/!svn/ver/1439/trunk/sass/crate/functions
+END
+_compact.scss
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/gx_lifeway/!svn/ver/1439/trunk/sass/crate/functions/_compact.scss
+END
+_px-to-em.scss
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/gx_lifeway/!svn/ver/1439/trunk/sass/crate/functions/_px-to-em.scss
+END
+_radial-gradient.scss
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/gx_lifeway/!svn/ver/1439/trunk/sass/crate/functions/_radial-gradient.scss
+END
+_modular-scale.scss
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/gx_lifeway/!svn/ver/1439/trunk/sass/crate/functions/_modular-scale.scss
+END
+_transition-property-name.scss
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/gx_lifeway/!svn/ver/1439/trunk/sass/crate/functions/_transition-property-name.scss
+END
+_render-gradients.scss
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/gx_lifeway/!svn/ver/1439/trunk/sass/crate/functions/_render-gradients.scss
+END
+_deprecated-webkit-gradient.scss
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/gx_lifeway/!svn/ver/1439/trunk/sass/crate/functions/_deprecated-webkit-gradient.scss
+END
+_tint-shade.scss
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/gx_lifeway/!svn/ver/1439/trunk/sass/crate/functions/_tint-shade.scss
+END
+_flex-grid.scss
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/gx_lifeway/!svn/ver/1439/trunk/sass/crate/functions/_flex-grid.scss
+END
+_grid-width.scss
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/gx_lifeway/!svn/ver/1439/trunk/sass/crate/functions/_grid-width.scss
+END
+_linear-gradient.scss
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/gx_lifeway/!svn/ver/1439/trunk/sass/crate/functions/_linear-gradient.scss
+END
