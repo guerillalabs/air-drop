@@ -1,9 +1,9 @@
-// forked from Bourbon 3.0 - http://bourbon.io/
+// Inspired by Bourbon - http://bourbon.io/
 // requires Sass 3.2
 
 // Custom Functions
 @import "functions/compact";
-@import "functions/deprecated-webkit-gradient";
+@import "functions/contrasted-color";
 @import "functions/flex-grid";
 @import "functions/grid-width";
 @import "functions/linear-gradient";
@@ -11,6 +11,7 @@
 @import "functions/px-to-em";
 @import "functions/radial-gradient";
 @import "functions/render-gradients";
+@import "functions/reset-float";
 @import "functions/tint-shade";
 @import "functions/transition-property-name";
 
@@ -38,14 +39,20 @@
 @import "css3/placeholder";
 
 // Addons & other mixins
+@import "addons/advanced-typography";
 @import "addons/button";
 @import "addons/clearfix";
 @import "addons/font-family";
+@import "addons/grid-background";
 @import "addons/hide-text";
 @import "addons/html5-input-types";
+@import "addons/list";
+@import "addons/max-width";
+@import "addons/media-query";
 @import "addons/position";
 @import "addons/prefixer";
 @import "addons/retina-image";
 @import "addons/size";
 @import "addons/timing-functions";
 @import "addons/triangle";
+@import "addons/vertical-rhythm";

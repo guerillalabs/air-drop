@@ -1,0 +1,3 @@
+@mixin reset-float($display: block) {
+  float: none;
+  display: $display; }

@@ -65,7 +65,6 @@
   }
 
   background-color:  $fallback-color;
-  background-image: deprecated-webkit-gradient(radial, $deprecated-pos1, $deprecated-pos2, $full, $deprecated-radius1, $deprecated-radius2); // Safari <= 5.0
   background-image:  -webkit-radial-gradient($pos, $shape-size, $full);
   background-image:     -moz-radial-gradient($pos, $shape-size, $full);
   background-image:      -ms-radial-gradient($pos, $shape-size, $full);
