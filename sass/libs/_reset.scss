@@ -3,7 +3,7 @@
 
 // Inspired by http://meyerweb.com/eric/tools/css/reset/
 
-* { @include box-sizing(border-box); }
+*, :before, :after { @include box-sizing(border-box); }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { border:0; font:inherit; font-size:100%; margin:0; padding:0; vertical-align:baseline; }
 
@@ -19,7 +19,7 @@ caption, th, td { text-align: left; font-weight: normal; vertical-align: middle;
 a img { border: none; }
 
 
-// Forms. If no forms, remove these bad boys
+// Forms. These styles can be removed if there are no forms.
 // -----------------------------------------------------------
 
 button, input { line-height: normal; }
