@@ -1,0 +1,3 @@
+[submodule "sass/SASSpool"]
+	path = sass/SASSpool
+	url = git://github.com/guerillalabs/SASSpool.git
