@@ -3,7 +3,7 @@
 // change this to true for css files that should get both media query and class styles together, and 'only' for those that should only receive the class based styles
 $lte-ie8                   : false !default;
 
-@mixin mq($point, $for-ie8: false, $query1: min, $query2: width) {
+@mixin mq($point, $for-ie8: true, $query1: min, $query2: width) {
     @if $for-ie8 == true and $lte-ie8 == 'only' {
         .lte-ie8 & {
             @content;
