@@ -4,10 +4,13 @@ A little something to kick off all your campaigns.
 
 ## Submodules
 
+**For the time being, all submodules have been removed from this repo. Some may be added back when this hits 1.0.** In the meantime, below are all the commands needed to work with the submodules properly.
+
 This repository contains submodules (which will not be downloaded as part of the zip). Each submodule will need to be downloaded separately (if you aren't cloning the repo) and placed in the correct position.
 
 * path = sass/SASSpool
 * url = git://github.com/guerillalabs/SASSpool.git
+* It was added with: git submodule add git://github.com/guerillalabs/SASSpool.git ./sass/SASSpool
 
 ### Clone and download all submodules
 
