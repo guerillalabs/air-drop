@@ -1,4 +1,0 @@
-@mixin remify($property: font-size, $target: 16, $context: $base-font-size) {
-	#{$property}: #{$target}px;
-	#{$property}: #{$target / $context}rem;
-}

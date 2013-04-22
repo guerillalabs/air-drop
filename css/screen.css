@@ -79,9 +79,8 @@ html {
 
 body {
   background-color: transparent;
-  color: #7d603e;
+  color: #212420;
   font-family: Palatino, "Times New Roman", Times, serif;
-  font-size: 18px;
   font-size: 1rem;
   line-height: 1.5;
   width: 100%; }
@@ -102,6 +101,10 @@ a {
     color: #8d2f1c; }
   a:focus, a:active {
     color: #aa3921; }
+
+@media screen and (min-width: 27.77778rem) {
+  a {
+    color: #212420; } }
 
 /* ::Layout styles - Layouts hold one or more modules together. */
 /* ------------------------------------------------------------ */

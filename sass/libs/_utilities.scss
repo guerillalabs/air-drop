@@ -8,11 +8,11 @@
 // @import "functions/grid-width";
 // @import "functions/linear-gradient";
 // @import "functions/modular-scale";
-@import "functions/px-to";
 // @import "functions/radial-gradient";
 // @import "functions/render-gradients";
 // @import "functions/tint-shade";
 // @import "functions/transition-property-name";
+@import "functions/units";
 
 // CSS3 Mixins
 // @import "css3/animation";
@@ -48,11 +48,10 @@
 // @import "addons/html5-input-types";
 // @import "addons/list";
 // @import "addons/max-width";
-// @import "addons/media-query";
+@import "addons/media-query";
 // @import "addons/placeholder";
 // @import "addons/position";
 @import "addons/prefixer";
-@import "addons/remify";
 // @import "addons/reset-float";
 // @import "addons/retina-image";
 // @import "addons/size";

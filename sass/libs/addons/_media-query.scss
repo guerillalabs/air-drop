@@ -1,17 +1,26 @@
 // From http://alwaystwisted.com/post.php?s=2013-04-01-my-media-query-mixin (cached: http://pinboard.in/cached/f53fd00c7141/)
 
-@mixin mq($point, $IE9: false, $query1: min, $query2: width) {
-    @if $IE9 == true{
-        .lt-ie9 & {
-            @content;
-        }
-        @media screen and (#{$query1}-#{$query2}: $point / $doc-font-size +em) {
+// change this to true for css files that should get both media query and class styles together, and 'only' for those that should only receive the class based styles
+$lte-ie8                   : false !default;
+
+@mixin mq($point, $for-ie8: false, $query1: min, $query2: width) {
+    @if $for-ie8 == true and $lte-ie8 == 'only' {
+        .lte-ie8 & {
             @content;
         }
     }
 
-    @else {
-        @media screen and (#{$query1}-#{$query2}: $point / $doc-font-size +em) {
+    @else if $for-ie8 == true and $lte-ie8 == true {
+        .lt-ie8 & {
+            @content;
+        }
+        @media screen and (#{$query1}-#{$query2}: $point / $base-font-size +rem) {
+            @content;
+        }
+    }
+
+    @else if $lte-ie8 == false {
+        @media screen and (#{$query1}-#{$query2}: $point / $base-font-size +rem) {
             @content;
         }
     }

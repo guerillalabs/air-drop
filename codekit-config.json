@@ -3,7 +3,7 @@
   "creatorBuild" : "8283",
   "files" : {
     "\/sass\/screen.scss" : {
-      "ignoreWasSetByUser" : 0,
+      "ignoreWasSetByUser" : 1,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
@@ -105,14 +105,17 @@
       "outputAbbreviatedPath" : "\/js\/jquery-1.8.2.min-ck.js",
       "fileType" : 64
     },
-    "\/docs\/sass.html" : {
+    "\/sass\/libs\/functions\/_tint-shade.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/docs\/sass.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/sass\/libs\/functions\/_tint-shade.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_tint-shade.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/index.html" : {
       "ignoreWasSetByUser" : 0,
@@ -135,6 +138,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/docs\/sass.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/docs\/sass.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/js\/script.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -145,18 +157,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/js\/script-ck.js",
       "fileType" : 64
-    },
-    "\/sass\/libs\/functions\/_tint-shade.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/functions\/_tint-shade.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_tint-shade.css",
-      "fileType" : 4,
-      "debugStyle" : 0
     },
     "\/sass\/libs\/addons\/_list.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -215,15 +215,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/sass\/libs\/css3\/_inline-block.scss" : {
+    "\/sass\/libs\/css3\/_image-rendering.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_inline-block.scss",
+      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_image-rendering.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_inline-block.css",
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_image-rendering.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -236,15 +236,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/sass\/libs\/css3\/_placeholder.scss" : {
+    "\/sass\/libs\/css3\/_inline-block.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_placeholder.scss",
+      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_inline-block.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_placeholder.css",
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_inline-block.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -260,15 +260,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/libs\/css3\/_image-rendering.scss" : {
+    "\/sass\/libs\/css3\/_placeholder.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_image-rendering.scss",
+      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_placeholder.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_image-rendering.css",
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_placeholder.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -398,18 +398,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/sass\/libs\/css3\/_background-image.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_background-image.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_background-image.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/libs\/addons\/_position.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -422,6 +410,18 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/sass\/libs\/css3\/_background-image.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_background-image.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_background-image.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
     "\/type\/blokk\/BLOKKNeue-Regular\/webfonts\/style.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -430,18 +430,6 @@
       "inputAbbreviatedPath" : "\/type\/blokk\/BLOKKNeue-Regular\/webfonts\/style.css",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
-    },
-    "\/sass\/libs\/functions\/_px-to.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/functions\/_px-to.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_px-to.css",
-      "fileType" : 4,
-      "debugStyle" : 0
     },
     "\/sass\/libs\/addons\/_triangle.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -583,6 +571,18 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/lte-ie8.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/libs\/functions\/_units.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/libs\/functions\/_units.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_units.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -754,18 +754,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/libs\/addons\/_remify.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/addons\/_remify.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_remify.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/libs\/functions\/_contrasted-color.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -775,6 +763,18 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/sass\/libs\/css\/_contrasted-color.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/libs\/css3\/_box-sizing.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_box-sizing.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_box-sizing.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -819,18 +819,6 @@
       "inputAbbreviatedPath" : "\/docs\/index.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/sass\/libs\/css3\/_box-sizing.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_box-sizing.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_box-sizing.css",
-      "fileType" : 4,
-      "debugStyle" : 0
     },
     "\/sass\/libs\/addons\/_advanced-typography.scss" : {
       "ignoreWasSetByUser" : 0,

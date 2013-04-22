@@ -40,7 +40,7 @@
 
 html {
 	background: $body-color;
-	font-size: px-to-percent($base-font-size, 16);
+	font-size: percent($base-font-size, 16px);
 	-webkit-overflow-scrolling: touch;
 	// -webkit-tap-highlight-color: $lightestneutralcolor;
 	-webkit-text-size-adjust: 100%;
@@ -51,7 +51,7 @@ body {
 	background-color: transparent;
 	color: $text-color;
 	font-family: $base-font-family;
-	@include remify(font-size, $base-font-size);
+	font-size: rel($base-font-size);
 	line-height : $base-line-height;
 	width : 100%;
 }
@@ -68,6 +68,12 @@ a {
 	&:focus, &:active {
 		color: $link-color-focus;
 	}
+}
+
+a {
+    @include mq(500, true) {
+        color: $black;
+    }
 }
 
 
