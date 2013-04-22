@@ -1,0 +1,20 @@
+// @include placeholder(VALUE) (color)
+
+@mixin placeholder($color : $neutralcolor) {
+
+&:-moz-placeholder {
+@include font-size(14);
+color : $color; }
+
+&::-moz-placeholder {
+@include font-size(14);
+color : $color; }
+
+&:-ms-input-placeholder {
+@include font-size(14);
+color : $color; }
+
+&::-webkit-input-placeholder {
+@include font-size(14);
+color : $color; }
+}

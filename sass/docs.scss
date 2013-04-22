@@ -1,0 +1,289 @@
+// ::Settings and ::Utilities
+// ------------------------------------------------------------
+@import "libs/utilities";
+@import "settings";
+
+
+
+// code blocks
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;	
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0,0%,100%,.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+
+.token.regex,
+.token.important {
+	color: #e90;
+}
+
+.token.important {
+	font-weight: bold;
+}
+
+.token.entity {
+	cursor: help;
+}
+pre[data-line] {
+	position: relative;
+	padding: 1em 0 1em 3em;
+}
+
+.line-highlight {
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: inherit 0;
+	margin-top: 1em; /* Same as .prism’s padding-top */
+
+	background: hsla(24, 20%, 50%,.08);
+	background: -moz-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+	background: -webkit-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+	background: -o-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+	background: linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+	
+	pointer-events: none;
+	
+	line-height: inherit;
+	white-space: pre;
+}
+
+	.line-highlight:before,
+	.line-highlight[data-end]:after {
+		content: attr(data-start);
+		position: absolute;
+		top: .4em;
+		left: .6em;
+		min-width: 1em;
+		padding: 0 .5em;
+		background-color: hsla(24, 20%, 50%,.4);
+		color: hsl(24, 20%, 95%);
+		font: bold 65%/1.5 sans-serif;
+		text-align: center;
+		vertical-align: .3em;
+		border-radius: 999px;
+		text-shadow: none;
+		box-shadow: 0 1px white;
+	}
+	
+	.line-highlight[data-end]:after {
+		content: attr(data-end);
+		top: auto;
+		bottom: .4em;
+	}
+
+
+
+
+
+// swatches
+
+.swatch {
+margin : 0 0 #{$vertical-rhythm * 3}px 0;
+padding : 0; }
+
+.swatch-row {
+display : block; 
+margin : 0;
+padding : 0;
+width : 200px;
+@extend %cf; }
+
+.swatch-row span {
+display : block;
+float : left; 
+width : 50px;
+height : 50px; }
+
+// base (primary)
+
+.swatch-base .swatch-row-one span:nth-child(1) {
+background-color : $primary-color; }
+
+.swatch-base .swatch-row-one span:nth-child(2) {
+background-color : $dark-primary-color; }
+
+.swatch-base .swatch-row-one span:nth-child(3) {
+background-color : $darker-primary-color; }
+
+.swatch-base .swatch-row-one span:nth-child(4) {
+background-color : $darkest-primary-color; }
+
+.swatch-base .swatch-row-two span:nth-child(1) {
+background-color : $primary-color; }
+
+.swatch-base .swatch-row-two span:nth-child(2) {
+background-color : $light-primary-color; }
+
+.swatch-base .swatch-row-two span:nth-child(3) {
+background-color : $lighter-primary-color; }
+
+.swatch-base .swatch-row-two span:nth-child(4) {
+background-color : $lightest-primary-color; }
+
+// secondary
+
+.swatch-secondary .swatch-row-one span:nth-child(1) {
+background-color : $secondary-color; }
+
+.swatch-secondary .swatch-row-one span:nth-child(2) {
+background-color : $dark-secondary-color; }
+
+.swatch-secondary .swatch-row-one span:nth-child(3) {
+background-color : $darker-secondary-color; }
+
+.swatch-secondary .swatch-row-one span:nth-child(4) {
+background-color : $darkest-secondary-color; }
+
+.swatch-secondary .swatch-row-two span:nth-child(1) {
+background-color : $secondary-color; }
+
+.swatch-secondary .swatch-row-two span:nth-child(2) {
+background-color : $light-secondary-color; }
+
+.swatch-secondary .swatch-row-two span:nth-child(3) {
+background-color : $lighter-secondary-color; }
+
+.swatch-secondary .swatch-row-two span:nth-child(4) {
+background-color : $lightest-secondary-color; }
+
+// tertiary
+
+.swatch-tertiary .swatch-row-one span:nth-child(1) {
+background-color : $tertiary-color; }
+
+.swatch-tertiary .swatch-row-one span:nth-child(2) {
+background-color : $dark-tertiary-color; }
+
+.swatch-tertiary .swatch-row-one span:nth-child(3) {
+background-color : $darker-tertiary-color; }
+
+.swatch-tertiary .swatch-row-one span:nth-child(4) {
+background-color : $darkest-tertiary-color; }
+
+.swatch-tertiary .swatch-row-two span:nth-child(1) {
+background-color : $tertiary-color; }
+
+.swatch-tertiary .swatch-row-two span:nth-child(2) {
+background-color : $light-tertiary-color; }
+
+.swatch-tertiary .swatch-row-two span:nth-child(3) {
+background-color : $lighter-tertiary-color; }
+
+.swatch-tertiary .swatch-row-two span:nth-child(4) {
+background-color : $lightest-tertiary-color; }
+
+// neutral
+
+.swatch-neutral .swatch-row-one span:nth-child(1) {
+background-color : $neutral-color; }
+
+.swatch-neutral .swatch-row-one span:nth-child(2) {
+background-color : $dark-neutral-color; }
+
+.swatch-neutral .swatch-row-one span:nth-child(3) {
+background-color : $darker-neutral-color; }
+
+.swatch-neutral .swatch-row-one span:nth-child(4) {
+background-color : $darkest-neutral-color; }
+
+.swatch-neutral .swatch-row-two span:nth-child(1) {
+background-color : $neutral-color; }
+
+.swatch-neutral .swatch-row-two span:nth-child(2) {
+background-color : $light-neutral-color; }
+
+.swatch-neutral .swatch-row-two span:nth-child(3) {
+background-color : $lighter-neutral-color; }
+
+.swatch-neutral .swatch-row-two span:nth-child(4) {
+background-color : $lightest-neutral-color; }

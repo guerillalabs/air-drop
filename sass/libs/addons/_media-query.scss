@@ -1,0 +1,18 @@
+// From http://alwaystwisted.com/post.php?s=2013-04-01-my-media-query-mixin (cached: http://pinboard.in/cached/f53fd00c7141/)
+
+@mixin mq($point, $IE9: false, $query1: min, $query2: width) {
+    @if $IE9 == true{
+        .lt-ie9 & {
+            @content;
+        }
+        @media screen and (#{$query1}-#{$query2}: $point / $doc-font-size +em) {
+            @content;
+        }
+    }
+
+    @else {
+        @media screen and (#{$query1}-#{$query2}: $point / $doc-font-size +em) {
+            @content;
+        }
+    }
+}
