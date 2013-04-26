@@ -21,6 +21,11 @@
 @import "libs/utilities";
 @import "settings";
 
+// @include grid((30,20,30,10,10), l, rel(36));
+// @include grid((60,40), l2);
+// make media query plugin work with min and max width (to confine grid styles to specific sizes)
+// add media queries here
+
 
 
 // ::Reset
@@ -71,7 +76,7 @@ a {
 }
 
 a {
-    @include mq(500, true) {
+    @include mq(500) {
         color: $black;
     }
 }

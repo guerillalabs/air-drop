@@ -94,16 +94,14 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/js\/jquery-1.8.2.min.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
+    "\/index.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/jquery-1.8.2.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/jquery-1.8.2.min-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/sass\/libs\/functions\/_tint-shade.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -117,14 +115,16 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/index.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+    "\/js\/jquery-1.8.2.min.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/js\/jquery-1.8.2.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/jquery-1.8.2.min-ck.js",
+      "fileType" : 64
     },
     "\/sass\/libs\/css3\/_radial-gradient.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -138,14 +138,17 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/docs\/sass.html" : {
+    "\/sass\/libs\/addons\/_grid.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/docs\/sass.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/sass\/libs\/addons\/_grid.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_grid.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/js\/script.js" : {
       "ignoreWasSetByUser" : 1,
@@ -157,6 +160,15 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/js\/script-ck.js",
       "fileType" : 64
+    },
+    "\/docs\/sass.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/docs\/sass.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/sass\/libs\/addons\/_list.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -215,15 +227,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/sass\/libs\/css3\/_image-rendering.scss" : {
+    "\/sass\/libs\/css3\/_inline-block.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_image-rendering.scss",
+      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_inline-block.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_image-rendering.css",
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_inline-block.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -236,15 +248,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/sass\/libs\/css3\/_inline-block.scss" : {
+    "\/sass\/libs\/css3\/_placeholder.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_inline-block.scss",
+      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_placeholder.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_inline-block.css",
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_placeholder.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -260,15 +272,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/libs\/css3\/_placeholder.scss" : {
+    "\/sass\/libs\/css3\/_image-rendering.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_placeholder.scss",
+      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_image-rendering.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_placeholder.css",
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_image-rendering.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -320,18 +332,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/libs\/addons\/_font-family.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/addons\/_font-family.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_font-family.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/libs\/addons\/_placeholder.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -341,6 +341,18 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/sass\/libs\/css\/_placeholder.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/libs\/addons\/_font-family.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/libs\/addons\/_font-family.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_font-family.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -422,15 +434,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/type\/blokk\/BLOKKNeue-Regular\/webfonts\/style.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/type\/blokk\/BLOKKNeue-Regular\/webfonts\/style.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/sass\/libs\/addons\/_triangle.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -442,6 +445,15 @@
       "outputAbbreviatedPath" : "\/sass\/libs\/css\/_triangle.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/type\/blokk\/BLOKKNeue-Regular\/webfonts\/style.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/type\/blokk\/BLOKKNeue-Regular\/webfonts\/style.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/sass\/libs\/addons\/_clearfix.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -658,15 +670,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/libs\/addons\/_html5-input-types.scss" : {
+    "\/sass\/libs\/addons\/_media-query.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/addons\/_html5-input-types.scss",
+      "inputAbbreviatedPath" : "\/sass\/libs\/addons\/_media-query.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_html5-input-types.css",
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_media-query.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -682,15 +694,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/libs\/addons\/_media-query.scss" : {
+    "\/sass\/libs\/addons\/_html5-input-types.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/addons\/_media-query.scss",
+      "inputAbbreviatedPath" : "\/sass\/libs\/addons\/_html5-input-types.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_media-query.css",
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_html5-input-types.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -820,15 +832,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/sass\/libs\/addons\/_advanced-typography.scss" : {
+    "\/sass\/libs\/css3\/_animation.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/addons\/_advanced-typography.scss",
+      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_animation.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_advanced-typography.css",
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_animation.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -844,15 +856,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/libs\/css3\/_animation.scss" : {
+    "\/sass\/libs\/addons\/_advanced-typography.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_animation.scss",
+      "inputAbbreviatedPath" : "\/sass\/libs\/addons\/_advanced-typography.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_animation.css",
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_advanced-typography.css",
       "fileType" : 4,
       "debugStyle" : 0
     }

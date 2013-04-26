@@ -2,8 +2,8 @@
 // ------------------------------------------------------------
 
 $relative-sizing			: true !default; // Set to false if you want to use absolute pixels in your dimensions
-$relative-sizing-unit		: 'rem' !default;
-$absolute-sizing-unit		: 'px' !default;
+$relative-sizing-unit		: 1rem !default; // This needs the one in front of it to convert variables to numbers
+$absolute-sizing-unit		: 1px !default; // This needs the one in front of it to convert variables to numbers
 $base-font-size				: 16 !default;
 
 // Make px to rems using base-font-size 
@@ -12,8 +12,8 @@ $base-font-size				: 16 !default;
 
 @function rel($target, $context: $base-font-size) {
 	@if strip-units($target) == 0 { @return 0 }
-	@else if not $relative-sizing { @return #{round(strip-units($target))}#{$absolute-sizing-unit} }
-	@else { @return #{strip-units($target) / strip-units($context)}#{$relative-sizing-unit} }
+	@else if not $relative-sizing { @return (round(strip-units($target))) * $absolute-sizing-unit }
+	@else { @return (strip-units($target) / strip-units($context)) * $relative-sizing-unit }
 }
 
 
