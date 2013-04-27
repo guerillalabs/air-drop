@@ -105,5 +105,12 @@ a {
 .lte-ie8 a {
   color: #212420; }
 
+.lte-ie8 a {
+  color: #212420; }
+.lte-ie8 em {
+  color: #212420; }
+.lte-ie8 strong {
+  color: #212420; }
+
 /* ::Layout styles - Layouts hold one or more modules together. */
 /* ------------------------------------------------------------ */

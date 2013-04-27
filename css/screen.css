@@ -106,5 +106,14 @@ a {
   a {
     color: #212420; } }
 
+@media screen and (min-width: 27.77778rem) and (max-width: 44.44444rem) {
+  a {
+    color: #212420; }
+
+  em {
+    color: #212420; }
+
+  strong {
+    color: #212420; } }
 /* ::Layout styles - Layouts hold one or more modules together. */
 /* ------------------------------------------------------------ */
