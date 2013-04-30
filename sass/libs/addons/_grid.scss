@@ -1,0 +1,105 @@
+@mixin grid($columns, $prefix, $gutter: 0) {
+    // initial column setup
+    $selectors: "";
+    @for $i from 1 through length($columns) {
+        $selectors: $selectors + "[class*=' #{$prefix}#{$i}'],";
+        $selectors: $selectors + "[class^='#{$prefix}#{$i}'],";
+    }
+    $selectors: $selectors + ".#{$prefix}-all";
+    // write css
+    #{$selectors} {display:block;float:left;margin-right:-100%;}
+
+
+    // grid spans
+    $spans: ();
+    @for $i from 1 through length($columns) {
+        $selector: '.#{$prefix}#{$i}';
+        $width: nth($columns, $i) + 0%;
+        $spans: append($spans, ($selector, $width));
+        @for $x from $i+1 through length($columns) {
+            $selector: '.#{$prefix}#{$i}-#{$prefix}#{$x}';
+            $width: $width + ($gutter + 0%) + (nth($columns, $x) + 0%);
+            $spans: append($spans, ($selector, $width));
+        }
+        //#{nth(nth($spans, $i),1)} { width:#{nth(nth($spans, $i),2)}; };
+    }
+    // now we will combine selectors if they share the same width
+    @for $i from 1 through length($spans) {
+        $write: true;
+        $selector: "";
+        @for $x from 1 through length($spans) {
+            @if nth(nth($spans, $i),2) == nth(nth($spans, $x),2) {
+                @if $x < $i { 
+                    $write: false;
+                }
+                @else if $x == $i {
+                    @if $write == true {
+                        $selector: nth(nth($spans, $i),1);
+                    }
+                }
+                @else {
+                    @if $write == true {
+                        $selector: $selector + "," + nth(nth($spans, $x),1);
+                    }
+                }
+            }
+        }
+        @if $write == true {
+            #{$selector} { width:#{nth(nth($spans, $i),2)}; };
+        }
+    }
+    .#{$prefix}-all{width:100%;margin-left:0;clear:left;}
+
+    
+
+
+    // grid clearing
+    $selectors: "";
+    @for $i from 2 through length($columns) {
+        @for $x from 2 through $i {
+            $selectors: $selectors + ".#{$prefix}#{$i}+[class*=' #{$prefix}#{$x}'],";
+            $selectors: $selectors + ".#{$prefix}#{$i}+[class^='#{$prefix}#{$x}'],";
+            $selectors: $selectors + "[class*=-#{$prefix}#{$i}]+[class*=' #{$prefix}#{$x}'],";
+            $selectors: $selectors + "[class*=-#{$prefix}#{$i}]+[class^='#{$prefix}#{$x}'],";
+        }
+    }
+    $selectors: $selectors + ".#{$prefix}-clear";
+    // write css
+    #{$selectors} {clear:left;}
+    .#{$prefix}-overlap[class*=overlap]{clear:none;}
+
+
+    // grid hiding
+    .#{$prefix}-hide{display:none !important;}
+
+
+    // $left: 0%;
+
+    // @for $i from 1 through length($columns) {
+    //     $width: nth($columns, $i) + 0%;
+    //     .#{$prefix}#{$i} {
+    //         float: left;
+    //         margin-left: $left;
+    //         margin-right: -100%;
+    //         padding-left: #{$gutter/2};
+    //         padding-right: #{$gutter/2};
+    //         width:#{$width};
+    //     }
+    //     @for $x from $i+1 through length($columns) {
+    //         $width: $width + (nth($columns, $x) + 0%);
+    //         .#{$prefix}#{$i}-#{$prefix}#{$x} {
+    //             float: left;
+    //             margin-left: $left;
+    //             margin-right: -100%;
+    //             padding-left: #{$gutter/2};
+    //             padding-right: #{$gutter/2};
+    //             width:#{$width};
+
+    //             // add subgrid (this width divided by container width)
+    //             // add padding, padding-full, padding-in, padding-in-full (padding full can be achieved by switching box-sizing back to padding-box and doing a negative left the appropriate amount)
+    //         }
+    //     }
+    //     $left: $left + (nth($columns, $i) + 0%);
+    //}
+    
+}
