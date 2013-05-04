@@ -1,9 +1,16 @@
+// Grid produces a very robust set of styles for a passed grid.
+// It assumes all numbers are percentages.
+//
+// Example usage:
+//
+//    @include grid((30,36,13,15), l, 2);
+
 @mixin grid($columns, $prefix, $gutter: 0) {
     // initial column setup
     $selectors: "";
     @for $i from 1 through length($columns) {
         $selectors: $selectors + "[class*=' #{$prefix}#{$i}'],";
-        $selectors: $selectors + "[class^='#{$prefix}#{$i}'],";
+        $selectors: $selectors + "[class^=#{$prefix}#{$i}],";
     }
     $selectors: $selectors + ".#{$prefix}-all";
     // write css
@@ -12,18 +19,37 @@
 
     // grid spans
     $spans: ();
+    // single selectors
     @for $i from 1 through length($columns) {
         $selector: '.#{$prefix}#{$i}';
-        $width: nth($columns, $i) + 0%;
-        $spans: append($spans, ($selector, $width));
+        $width: nth($columns, $i);
+        $spans: append($spans, ($selector, ($width + 0%)));
+        // span selectors
         @for $x from $i+1 through length($columns) {
-            $selector: '.#{$prefix}#{$i}-#{$prefix}#{$x}';
-            $width: $width + ($gutter + 0%) + (nth($columns, $x) + 0%);
-            $spans: append($spans, ($selector, $width));
+            // don't calculate the span if it goes the full width
+            @if $i != 1 or $x != length($columns) {
+                $selector: '.#{$prefix}#{$i}-#{$prefix}#{$x}';
+                $width: $width + $gutter + nth($columns, $x);
+                $spans: append($spans, ($selector, ($width + 0%)));
+                // single selectors within a span
+                @for $y from $i through $x {
+                    $selector: '.#{$prefix}#{$i}-#{$prefix}#{$x} .#{$prefix}#{$y}';
+                    $inner-width: (nth($columns, $y)*100) / $width;
+                    $spans: append($spans, ($selector, ($inner-width + 0%)));
+                    // spans within spans
+                    @for $z from $y+1 through $x {
+                        // don't calculate the span if it goes the full width
+                        @if $y != $i or $z != $x {
+                            $selector: '.#{$prefix}#{$i}-#{$prefix}#{$x} .#{$prefix}#{$y}-#{$prefix}#{$z}';
+                            $inner-width: $inner-width + ($gutter / $width) + (nth($columns, $z) / $width);
+                            $spans: append($spans, ($selector, ($inner-width + 0%)));
+                        }
+                    }
+                }
+            }
         }
-        //#{nth(nth($spans, $i),1)} { width:#{nth(nth($spans, $i),2)}; };
     }
-    // now we will combine selectors if they share the same width
+    // now we will combine selectors if they share the same width and write to the css
     @for $i from 1 through length($spans) {
         $write: true;
         $selector: "";
@@ -45,12 +71,220 @@
             }
         }
         @if $write == true {
-            #{$selector} { width:#{nth(nth($spans, $i),2)}; };
+            #{$selector} {width:#{nth(nth($spans, $i),2)};};
         }
     }
     .#{$prefix}-all{width:100%;margin-left:0;clear:left;}
 
-    
+
+    // grid padding
+    [class*=" #{$prefix}-pad"],[class^=#{$prefix}-pad]{padding-left:#{$gutter + 0%};padding-right:#{$gutter + 0%};left:-#{$gutter + 0%};}
+    $spans: ();
+    // single selectors
+    @for $i from 1 through length($columns) {
+        $containerwidth: nth($columns, $i);
+        // span selectors
+        @for $x from $i+1 through length($columns) {
+            // don't calculate the span if it goes the full width
+            @if $i != 1 or $x != length($columns) {
+                $selector: '.#{$prefix}#{$i}-#{$prefix}#{$x} [class*=" #{$prefix}-pad"]';
+                $containerwidth: $containerwidth + $gutter + nth($columns, $x);
+                $gutterwidth: ($gutter*100) / $containerwidth;
+                $spans: append($spans, ($selector, $gutterwidth));
+                $selector: '.#{$prefix}#{$i}-#{$prefix}#{$x} [class^=#{$prefix}-pad]';
+                $spans: append($spans, ($selector, ($gutterwidth + 0%)));
+            }
+        }
+    }
+    // now we will combine selectors if they share the same gutter and write to the css
+    @for $i from 1 through length($spans) {
+        $write: true;
+        $selector: "";
+        @for $x from 1 through length($spans) {
+            @if nth(nth($spans, $i),2) == nth(nth($spans, $x),2) {
+                @if $x < $i { 
+                    $write: false;
+                }
+                @else if $x == $i {
+                    @if $write == true {
+                        $selector: nth(nth($spans, $i),1);
+                    }
+                }
+                @else {
+                    @if $write == true {
+                        $selector: $selector + "," + nth(nth($spans, $x),1);
+                    }
+                }
+            }
+        }
+        @if $write == true {
+            #{$selector} {padding-left:#{nth(nth($spans, $i),2) + 0%};padding-right:#{nth(nth($spans, $i),2) + 0%};left:-#{nth(nth($spans, $i),2) + 0%};};
+        }
+    }
+    // grid padding full
+    [class~=#{$prefix}-padfull],[class~=#{$prefix}-padinfull]{padding-left:#{$gutter * 2 + 0%};padding-right:#{$gutter * 2 + 0%};left:-#{$gutter * 2 + 0%};}
+    $spans: ();
+    // single selectors
+    @for $i from 1 through length($columns) {
+        $containerwidth: nth($columns, $i);
+        // span selectors
+        @for $x from $i+1 through length($columns) {
+            // don't calculate the span if it goes the full width
+            @if $i != 1 or $x != length($columns) {
+                $selector: '.#{$prefix}#{$i}-#{$prefix}#{$x} [class~=#{$prefix}-padfull]';
+                $containerwidth: $containerwidth + $gutter + nth($columns, $x);
+                $gutterwidth: (($gutter*100) / $containerwidth) * 2;
+                $spans: append($spans, ($selector, ($gutterwidth + 0%)));
+                $selector: '.#{$prefix}#{$i}-#{$prefix}#{$x} [class~=#{$prefix}-padinfull]';
+                $spans: append($spans, ($selector, ($gutterwidth + 0%)));
+            }
+        }
+    }
+    // now we will combine selectors if they share the same gutter and write to the css
+    @for $i from 1 through length($spans) {
+        $write: true;
+        $selector: "";
+        @for $x from 1 through length($spans) {
+            @if nth(nth($spans, $i),2) == nth(nth($spans, $x),2) {
+                @if $x < $i { 
+                    $write: false;
+                }
+                @else if $x == $i {
+                    @if $write == true {
+                        $selector: nth(nth($spans, $i),1);
+                    }
+                }
+                @else {
+                    @if $write == true {
+                        $selector: $selector + "," + nth(nth($spans, $x),1);
+                    }
+                }
+            }
+        }
+        @if $write == true {
+            #{$selector} {padding-left:#{nth(nth($spans, $i),2) + 0%};padding-right:#{nth(nth($spans, $i),2) + 0%};left:-#{nth(nth($spans, $i),2) + 0%};};
+        }
+    }
+    .#{$prefix}-pad,.#{$prefix}-padfull{position:relative;@include box-sizing(content-box);}
+    .#{$prefix}-padin[class~=#{$prefix}-padin],.#{$prefix}-padinfull[class~=#{$prefix}-padinfull]{@include box-sizing(border-box);left:0;}
+
+
+    // grid relationships
+    $spans: ();
+    $offset: 0;
+    // single selectors
+    @for $i from 1 through length($columns) {
+        @if $i != 1 {
+            $selector: '[class*=" #{$prefix}#{$i}"]';
+            $spans: append($spans, ($selector, ($offset + 0%)));
+            $selector: '[class^=#{$prefix}#{$i}]';
+            $spans: append($spans, ($selector, ($offset + 0%)));
+        }
+        $offset: $offset + nth($columns, $i) + $gutter;
+        $width: nth($columns, $i);
+        $containerwidth: $width;
+        // span selectors
+        @for $x from $i+1 through length($columns) {
+            // don't calculate the span if it goes the full width
+            @if $i != 1 or $x != length($columns) {
+                $containerwidth: $containerwidth + $gutter + nth($columns, $x);
+                $inneroffset: (($width*100) / $containerwidth) + (($gutter*100) / $containerwidth);
+                @for $y from $i+1 through $x {
+                    $selector: '.#{$prefix}#{$i}-#{$prefix}#{$x} [class*=" #{$prefix}#{$y}"]';
+                    $spans: append($spans, ($selector, $inneroffset));
+                    $selector: '.#{$prefix}#{$i}-#{$prefix}#{$x} [class^=#{$prefix}#{$y}]';
+                    $spans: append($spans, ($selector, $inneroffset));
+                    $inneroffset: $inneroffset + ((nth($columns, $y)*100) / $containerwidth) + (($gutter*100) / $containerwidth);
+                }
+            }
+        }
+    }
+    // now we will combine selectors if they share the same gutter and write to the css
+    @for $i from 1 through length($spans) {
+        $write: true;
+        $selector: "";
+        @for $x from 1 through length($spans) {
+            @if nth(nth($spans, $i),2) == nth(nth($spans, $x),2) {
+                @if $x < $i { 
+                    $write: false;
+                }
+                @else if $x == $i {
+                    @if $write == true {
+                        $selector: nth(nth($spans, $i),1);
+                    }
+                }
+                @else {
+                    @if $write == true {
+                        $selector: $selector + "," + nth(nth($spans, $x),1);
+                    }
+                }
+            }
+        }
+        @if $write == true {
+            #{$selector} {margin-left:#{nth(nth($spans, $i),2) + 0%};};
+        }
+    }
+    // left justified
+    $selectors: ".#{$prefix}1,[class*=' #{$prefix}1-'],[class^=#{$prefix}1-],";
+    @for $i from 1 through (length($columns) - 1) {
+        $selectors: $selectors + "[class*=' #{$prefix}#{$i}-'] [class*=' #{$prefix}#{$i}-'],";
+        $selectors: $selectors + "[class^=#{$prefix}#{$i}-] [class*=' #{$prefix}#{$i}-'],";
+        $selectors: $selectors + "[class*=' #{$prefix}#{$i}-'] [class^=#{$prefix}#{$i}-],";
+        $selectors: $selectors + "[class^=#{$prefix}#{$i}-] [class^=#{$prefix}#{$i}-],";
+        $selectors: $selectors + "[class*=' #{$prefix}#{$i}-'] .#{$prefix}#{$i},";
+        $selectors: $selectors + "[class^=#{$prefix}#{$i}-] .#{$prefix}#{$i},";
+    }
+    $selectors: $selectors + ".#{$prefix}-all";
+    // write css
+    #{$selectors} {margin-left:0;clear:left;}
+
+
+    // grid floats
+    [class*=" #{$prefix}-float"][class*=" #{$prefix}-float"],[class^=#{$prefix}-float][class^=#{$prefix}-float]{margin-left:#{$gutter * 2 + 0%};margin-right:#{$gutter * 2 + 0%};}
+    $spans: ();
+    // single selectors
+    @for $i from 1 through length($columns) {
+        $containerwidth: nth($columns, $i);
+        // span selectors
+        @for $x from $i+1 through length($columns) {
+            // don't calculate the span if it goes the full width
+            @if $i != 1 or $x != length($columns) {
+                $selector: '.#{$prefix}#{$i}-#{$prefix}#{$x} [class*=" #{$prefix}-float"][class*=" #{$prefix}-float"]';
+                $containerwidth: $containerwidth + $gutter + nth($columns, $x);
+                $gutterwidth: ($gutter*100) / $containerwidth;
+                $spans: append($spans, ($selector, $gutterwidth));
+                $selector: '.#{$prefix}#{$i}-#{$prefix}#{$x} [class^=#{$prefix}-float][class^=#{$prefix}-float]';
+                $spans: append($spans, ($selector, ($gutterwidth + 0%)));
+            }
+        }
+    }
+    // now we will combine selectors if they share the same gutter and write to the css
+    @for $i from 1 through length($spans) {
+        $write: true;
+        $selector: "";
+        @for $x from 1 through length($spans) {
+            @if nth(nth($spans, $i),2) == nth(nth($spans, $x),2) {
+                @if $x < $i { 
+                    $write: false;
+                }
+                @else if $x == $i {
+                    @if $write == true {
+                        $selector: nth(nth($spans, $i),1);
+                    }
+                }
+                @else {
+                    @if $write == true {
+                        $selector: $selector + "," + nth(nth($spans, $x),1);
+                    }
+                }
+            }
+        }
+        @if $write == true {
+            #{$selector} {margin-left:#{nth(nth($spans, $i),2) + 0%};margin-right:#{nth(nth($spans, $i),2) + 0%};};
+        }
+    }
+    .#{$prefix}-floatright[class~=#{$prefix}-floatright],.#{$prefix}-floatright[class~=#{$prefix}-floatright]+.#{$prefix}-floatright[class~=#{$prefix}-floatright]{float:right;margin-right:0;clear:right;}
+    .#{$prefix}-floatleft[class~=#{$prefix}-floatleft]{float:left;margin-left:0;}
 
 
     // grid clearing
@@ -71,35 +305,4 @@
 
     // grid hiding
     .#{$prefix}-hide{display:none !important;}
-
-
-    // $left: 0%;
-
-    // @for $i from 1 through length($columns) {
-    //     $width: nth($columns, $i) + 0%;
-    //     .#{$prefix}#{$i} {
-    //         float: left;
-    //         margin-left: $left;
-    //         margin-right: -100%;
-    //         padding-left: #{$gutter/2};
-    //         padding-right: #{$gutter/2};
-    //         width:#{$width};
-    //     }
-    //     @for $x from $i+1 through length($columns) {
-    //         $width: $width + (nth($columns, $x) + 0%);
-    //         .#{$prefix}#{$i}-#{$prefix}#{$x} {
-    //             float: left;
-    //             margin-left: $left;
-    //             margin-right: -100%;
-    //             padding-left: #{$gutter/2};
-    //             padding-right: #{$gutter/2};
-    //             width:#{$width};
-
-    //             // add subgrid (this width divided by container width)
-    //             // add padding, padding-full, padding-in, padding-in-full (padding full can be achieved by switching box-sizing back to padding-box and doing a negative left the appropriate amount)
-    //         }
-    //     }
-    //     $left: $left + (nth($columns, $i) + 0%);
-    //}
-    
 }
