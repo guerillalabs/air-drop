@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 
 <head>
-	<title>CSShrapnel Documentation</title>
+	<title>Air-Drop Documentation</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="cleartype" content="on">
@@ -14,13 +14,11 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<!-- For all browsers -->
-	<link rel='stylesheet' href='../css/screen.css'>
+	<!-- For old IE -->
+	<!--[if (lt IE 9)&!(IEMobile)]><link rel='stylesheet' href='../css/lte-ie8.css'><link rel='stylesheet' href='../css/lte-ie8-grid.css'><![endif]-->
+	<!-- For all other browsers -->
+	<!--[if gt IE 8]><!--> <link rel='stylesheet' href='../css/screen.css'><link rel='stylesheet' href='../css/grid.css'><!--<![endif]-->
 	<link rel='stylesheet' href='../css/docs.css'>
-
-	<!--[if (lt IE 9) & (!IEMobile)]>
-	<link rel='stylesheet' href='../css/lte-ie8.css'>
-	<![endif]-->
 </head>
 
 <body class="samples">
@@ -29,23 +27,11 @@
 	<ul>
 		<li><a href="index.html">Overview</a></li>
 		<li><a href="styles.html">Styles</a></li>
-		<li><a href="components.html">Components</a></li>
-		<li><a href="widgets.html">Widgets</a></li>
+		<li><a href="layout.html">Layout</a></li>
+		<li><a href="modules.html">Modules</a></li>
 		<li><a href="sass.html">SASS</a></li>
 	</ul>
 </nav>
-<!-- <a href="#navigation-toggle" class="navigation-toggle">Menu</a>
-<nav id="navigation-toggle" role="navigation">
-	<ul>
-		<li><a href="#panel-typography">Typography</a></li>
-		<li><a href="#panel-colour">Colour</a></li>
-		<li><a href="#panel-images">Images</a></li>
-		<li><a href="#panel-navigation">Navigation</a></li>
-		<li><a href="#panel-modules">Modules</a></li>
-		<li><a href="#panel-forms">Forms</a></li>
-		<li><a href="#panel-tables">Tables</a></li>
-	</ul>
-</nav> -->
 
 <div class="container">
 
@@ -64,66 +50,102 @@
 <div class="l-trigger">
 <div class="l-wrap">
 <div class="l-summary">
-<h1><a href="#panel-forms-hidden" data-toggle="collapse" data-target="#panel-misc-hidden">Misc</a></h1>
+<h1><a href="#panel-forms-hidden" data-toggle="collapse" data-target="#panel-misc-hidden">SASS</a></h1>
 </div><!-- l-summary -->
 
 <div class="l-content">
 <p>Other stuff to help you out.</p>
-<p><a href="#rock-hammer" title="Go to top">Top</a></p>
 </div><!-- l-content -->
 </div><!-- l-wrap -->
 </div><!-- l-trigger -->
 
-<div class="l-hidden collapse" id="panel-forms-hidden">
+<div class="doc">
+	<div class="doc-info s2-s3 m2-m5 l2-l3">
+		<h3 class="doc-info-title">Units</h3>
+		<p>We use the extend syntax in SASS to clear floats. Simply apply <code class="language-scss">@extend %cf;</code> to the element that the floats are within.</p>
+		<p>The example would contain all floats within <code>.wrapper</code>.</p>
+	</div><!-- l-summary -->
 
-<div class="l-wrap">
-<div class="l-summary">
-<h3>Clearfix</h3>
-</div><!-- l-summary -->
-
-<div class="l-content">
-<pre data-line="3"><code class="language-scss">// Contain all floats within .wrapper
-.wrapper {
+	<div class="doc-code lb4-lb5 m2-m5 s-all">
+<pre data-line="2"><code class="language-scss">.wrapper {
 	@extend %cf;
 	.content,
 	.sidebar {
 		float: left;
 	}
 }</code></pre>
+	</div>
 </div>
 
+<div class="doc">
+	<div class="doc-info s2-s3 m2-m5 l2-l3">
+		<h3 class="doc-info-title">Media Queries</h3>
+		<p>Media Queries in Air-Drop should be used with the module that they modify. There is a mixin provided that makes it much easier to keep the styles together (and deliver the appropriate files to IE8 and below).</p>
+		<p>The mixin can be used in two ways: with a single element and surrounding multiple elements. Both variations can be seen in the example.</p>
+		<p>The are 5 parameters that can be passed to the mixin to modify its behavior – only one of which is required. They are as follows:</p>
+		<ol>
+			<li><strong>Point(s)</strong>: one breakpoint is required, but multiple may be passed in a list. If more than one breakpoint is passed, the same number of parameters 4 and 5 must also be passed. Each breakpoint should be a number with a unit.</li>
+			<li><strong>For IE8</strong>: boolean that determins if the mixin will attempt to create styles for IE8 and below. Defaults to true.</li>
+			<li><strong>Stand Alone</strong>: boolean that tells the mixin if it is being used with a single element or surrounding multiple elements. Defaults to false (we assume that it is in use with a single element – see the first example).</li>
+			<li><strong>Direction(s)</strong>: can be min or max. Set a direction to correlate to each breakpoint passed.</li>
+			<li><strong>Dimension(s)</strong>: can be width or height. Set a dimension to correlate to each breakpoint passed.</li>
+		</ol>
+		<p>In Air-Drop, the main screen.scss is set to not have any IE8 or below styles. A separate lte-ie8.scss file is provided to do hold styles that are used instead of media queries (and to use px instead of rem). To achieve this, the lte-ie8.scss file sets a variable (<code class="language-scss">$lte-ie8: 'only';</code>). Options for this variable are 'false' (the default, which screen.scss uses), 'true' (which would put media queries and ie8 class-based styles in the same stylesheet), and 'only' (which will only output the ie8 styles). For smaller projects, you may want to set this to 'true' for the main stylesheet (I recommend overwriting the variable in your _settings.scss file).
+	</div><!-- l-summary -->
+
+	<div class="doc-code lb4-lb5 m2-m5 s-all">
+<pre><code class="language-scss">a {
+	@include mq(500) {
+    	color: $black;
+	}
+}
+
+@include mq((500, 800), true, true, (min, max), (width, width)) {
+	a { color: $black; }
+	em { color: $black; }
+	strong { color: $black; }
+}</code></pre>
+	</div>
 </div>
+
+<div class="doc">
+	<div class="doc-info s2-s3 m2-m5 l2-l3">
+		<h3 class="doc-info-title">Clearfix</h3>
+		<p>We use the extend syntax in SASS to clear floats. Simply apply <code class="language-scss">@extend %cf;</code> to the element that the floats are within.</p>
+		<p>The example would contain all floats within <code>.wrapper</code>.</p>
+	</div><!-- l-summary -->
+
+	<div class="doc-code lb4-lb5 m2-m5 s-all">
+<pre data-line="2"><code class="language-scss">.wrapper {
+	@extend %cf;
+	.content,
+	.sidebar {
+		float: left;
+	}
+}</code></pre>
+	</div>
 </div>
 
 <!-- Final ============================== -->
 
-<footer role="contentinfo" class="donthatetimvandamme">
-<small>Rock Hammer v0.1 by <a href="http://stuffandnonsense.co.uk">Stuff and Nonsense</a>.</small> 
-<small>Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.</small>
-<small>Thanks to:
-<a href="http://twitter.com/aaronallport">Aaron Allport</a>, 
-<a href="https://twitter.com/chriscoyier">Chris Coyier</a>, 
-<a href="http://twitter.com/brad_frost">Brad Frost</a> and 
-<a href="http://twitter.com/twbootstrap">Bootstrap</a>.
-</small>
+<footer role="contentinfo" class="l-clear">
 </footer>
 </div><!-- container -->
 
-<script src='js/vendor/jquery-1.8.3-min.js'></script>
+<!-- <script src='js/vendor/jquery-1.8.3-min.js'></script>
 <script src='js/vendor/jquery/jquery.scrollTo.min.js'></script>
 <script src='js/vendor/bootstrap-min.js'></script>
-<script src='js/main.js'></script>
+<script src='js/main.js'></script> -->
 
-<script>
+<!-- <script>
 var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
-
-<!-- Remove if unused --> <script src='js/nav-patterns/nav-toggle.js'></script>
-<!-- Remove if unused --> <script src='js/nav-patterns/left-nav-flyout.js'></script>
+</script> -->
 
 <script src="../js/prism.js"></script>
+
+<script src="../js/gridset-overlay.js"></script>
 </body>
 </html>

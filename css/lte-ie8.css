@@ -80,7 +80,7 @@ html {
 body {
   background-color: transparent;
   color: #212420;
-  font-family: Palatino, "Times New Roman", Times, serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 1.5;
   width: 100%; }
@@ -101,16 +101,3 @@ a {
     color: #8d2f1c; }
   a:focus, a:active {
     color: #aa3921; }
-
-.lte-ie8 a {
-  color: #212420; }
-
-.lte-ie8 a {
-  color: #212420; }
-.lte-ie8 em {
-  color: #212420; }
-.lte-ie8 strong {
-  color: #212420; }
-
-/* ::Layout styles - Layouts hold one or more modules together. */
-/* ------------------------------------------------------------ */

@@ -1,5 +1,3 @@
-// IMPORTANT: the path of the SASSpool folder needs to be defined in the import rules within this document (except for settings).
-
 // Table of Contents
 // -------------------------------------------------------------
 
@@ -10,9 +8,9 @@
 // ::Base styles
 
 // ::Layout styles
-// ::Media queries
+// ::Module styles
 // ::State styles
-// ::Debugs
+// ::Theme styles
 
 
 
@@ -29,7 +27,7 @@
 
 
 
-// ::Base styles Almost exclusively single element selectors
+// ::Base styles - almost exclusively single element selectors
 // ------------------------------------------------------------
 
 @-moz-viewport { width: device-width; }
@@ -70,18 +68,17 @@ a {
 	}
 }
 
-a {
-    @include mq(500) {
-        color: $black;
-    }
-}
+// a {
+//     @include mq(500) {
+//         color: $black;
+//     }
+// }
 
-@include mq((500, 800), true, true, (min, max), (width, width)) {
-    a { color: $black; }
-    em { color: $black; }
-    strong { color: $black; }
-}
-
+// @include mq((500, 800), true, true, (min, max), (width, width)) {
+//     a { color: $black; }
+//     em { color: $black; }
+//     strong { color: $black; }
+// }
 
 
 // Import base typography into the cascade (if required)
@@ -89,37 +86,29 @@ a {
 
 
 // Import form styles into the cascade (if required)
-// @import "libs/forms";			
+// @import "libs/forms";
 
 
 
-// -------------------------------------------------------------------------------------------------------
+// ::Layout styles
+// ------------------------------------------------------------
 
-// All the below can be removed if need be
-
-// -------------------------------------------------------------------------------------------------------
-
-
+// grid
+// the grid styles are in grid.css (to speed up compiling) - for production it would be good to move them here
 
 
-/* ::Layout styles - Layouts hold one or more modules together. */
-/* ------------------------------------------------------------ */
 
-// .container {
-// 	@extend %cf;
-// 	margin: 0 auto;
-// }
-// 
-// /* Example styles - you'll most likey want to remove*/
-// header {
-// 	@include padding-leader(4);
-// 	@include padding-trailer(2);
-// 	@include trailer(6);
-// 	background: #333;
-// 	h1 { color: #fff; }
-// }
-// 
-// section 				{ @extend .clearfix; }
-// h1 						{ font-weight: 600; }
-// ol 						{ @include ordered-inside }
-// ul 						{ @include unordered-inside }
+// ::Module styles
+// ------------------------------------------------------------
+
+
+
+// ::State styles
+// ------------------------------------------------------------
+
+
+
+// ::Theme styles
+// ------------------------------------------------------------
+
+// n/a

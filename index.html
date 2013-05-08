@@ -2,10 +2,15 @@
 <html lang="en-GB"> 
 <head>
 	<title>Air-Drop</title>
-	<link rel="stylesheet" href="css/screen.css">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- For old IE -->
+	<!--[if (lt IE 9)&!(IEMobile)]><link rel='stylesheet' href='css/lte-ie8.css'><link rel='stylesheet' href='css/lte-ie8-grid.css'><![endif]-->
+	<!-- For all other browsers -->
+	<!--[if gt IE 8]><!--> <link rel='stylesheet' href='css/screen.css'><link rel='stylesheet' href='css/grid.css'><!--<![endif]-->
+
 	<!--Scripts before load-->
 	<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
 </head>

@@ -1,7 +1,19 @@
-.swatch-row:after {
+.doc:after, .swatch-row:after {
   content: "";
   display: table;
   clear: both; }
+
+.doc {
+  margin: 2rem 0; }
+
+.doc-info-title {
+  font-family: Palatino, "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 0.5rem 0; }
+
+.doc-info p {
+  margin: 0.5rem 0; }
 
 /**
  * prism.js default theme for JavaScript, CSS and HTML

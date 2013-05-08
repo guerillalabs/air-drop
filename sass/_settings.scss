@@ -7,6 +7,7 @@
 // ::Typography
 // ::Dimensions
 // ::Colors
+// ::Texture
 
 
 
@@ -25,12 +26,12 @@ $base-font-size				: 18;
 $base-line-height			: 1.5;
 
 // typefaces
-$base-font-family			: $palatino;
+$base-font-family			: $helvetica;
 
-$alt-font-family			: $helvetica;
+$alt-font-family			: $palatino;
 
 // Your headings may inherit the base typeface, or you may set a different font stack
-$heading-font-family		: inherit;
+$heading-font-family		: $alt-font-family;
 
 // You can choose a special typeface just for ampersands, too
 $amp-font-family			: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua');
@@ -42,8 +43,37 @@ $code-font-family			: $monospace;
 // ::Dimensions			================================================
 // =====================================================================
 
-$gutter-width 				: $base-font-size * $base-line-height;
+$pad-small					: $base-font-size / 2;
+$pad						: $base-font-size;
+$pad-large					: $base-font-size * $base-line-height;
+
 $vertical-rhythm 			: $base-font-size / 2;	// should equal a whole number
+
+// breakpoints
+$bp-small					: (480/$base-font-size) + 0rem;
+$bp-medium					: (768/$base-font-size) + 0rem;
+$bp-large					: (992/$base-font-size) + 0rem;
+
+$maxwidth					: (1440/$base-font-size) + 0rem;
+
+// grid dimensions
+@function grid-cols($prefix){
+  @if $prefix == s	{ @return (11.212121212121213,32.7878787878788,32.7878787878788,11.212121212121213); }
+  @if $prefix == m	{ @return (11.212121212121213,16.2689393939394,16.2689393939394,16.2689393939394,16.2689393939394,11.212121212121213); }
+  @if $prefix == mb	{ @return (11.212121212121213,22.5252525252525,22.5252525252525,22.5252525252525,11.212121212121213); }
+  @if $prefix == l	{ @return (11.212121212121213,16.8939393939394,16.8939393939394,16.893939393939394,16.8939393939394,11.212121212121213); }
+  @if $prefix == lb	{ @return (11.212121212121213,23.1919191919192,23.1919191919192,23.1919191919192,11.212121212121213); }
+  @if $prefix == lc	{ @return (11.212121212121213,11.212121212121213,22.5505000407102,22.5505000407102,11.212121212121213,11.212121212121213); }
+}
+
+@function grid-gutter($prefix){
+	@if $prefix == s	{ @return 4; }
+	@if $prefix == m	{ @return 2.5; }
+	@if $prefix == mb	{ @return 2.5; }
+	@if $prefix == l	{ @return 2; }
+	@if $prefix == lb	{ @return 2; }
+	@if $prefix == lc	{ @return 2; }
+}
 
 
 
@@ -94,7 +124,7 @@ $lightest-neutral-color		: lighten($neutral-color,50%);
 $body-color					: $white;
 $text-color					: $black;
 
-// Choose a color for your hyperlinks. Often this will be the $primary-color 
+// Choose a color for your hyperlinks. Often this will be the $primary-color
 $link-color 		    	: $primary-color;
 $link-color-hover 			: $dark-primary-color;
 $link-color-visited   		: $darker-primary-color;
@@ -107,3 +137,13 @@ $info-color					: rgb(216,220,162);
 $inverse-color 				: rgb(65,65,65);
 $success-color 				: rgb(188,212,222);
 $warning-color 				: $error-color;
+
+
+
+// ::Texture			================================================
+// =====================================================================
+
+$border-color    				: $lighter-neutral-color;
+$border-style					: solid;
+$border-width 					: 1px;
+$border-radius 					: 3px;

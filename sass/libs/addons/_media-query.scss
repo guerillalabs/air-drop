@@ -20,7 +20,7 @@ $lte-ie8                   : false !default;
     @if $lte-ie8 != 'only'  {
         $query: '';
         @for $i from 1 through length($points) {
-            $query: $query + ' and (#{nth($directions, $i)}-#{nth($dimensions, $i)}: #{nth($points, $i) / $base-font-size +rem})';
+            $query: $query + ' and (#{nth($directions, $i)}-#{nth($dimensions, $i)}: #{nth($points, $i)})';
         }
         @media screen #{$query} {
             @content;

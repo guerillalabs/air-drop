@@ -1,0 +1,17 @@
+@import "libs/utilities";
+@import "settings";
+
+@include mq($bp-small, false, true, max, width) {
+    @include grid(grid-cols(s), s, grid-gutter(s));
+}
+
+@include mq(($bp-small, $bp-medium), false, true, (min,max), (width,width)) {
+    @include grid(grid-cols(m), m, grid-gutter(m));
+	@include grid(grid-cols(mb), mb, grid-gutter(mb));
+}
+
+@include mq($bp-medium, true, true, min, width) {
+    @include grid(grid-cols(l), l, grid-gutter(l));
+	@include grid(grid-cols(lb), lb, grid-gutter(lb));
+	@include grid(grid-cols(lc), lc, grid-gutter(lc));
+}
