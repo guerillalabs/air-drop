@@ -23,7 +23,13 @@ $base-url					: '/';				// typically '/' or '../'
 // =====================================================================
 
 $base-font-size				: 18;
-$base-line-height			: 1.5;
+$small-font-size            : golden-ratio(($base-font-size / 2), 1);
+$smallest-font-size         : golden-ratio($base-font-size, -1);
+$large-font-size            : golden-ratio($base-font-size, 1);
+$largest-font-size          : golden-ratio($base-font-size, 2);
+
+$base-line-height			: 18 * 1.5;
+
 
 // typefaces
 $base-font-family			: $helvetica;

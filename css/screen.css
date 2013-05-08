@@ -82,7 +82,11 @@ body {
   color: #212420;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.5rem;
+  border: 1.618rem;
+  border: 2.61792rem;
+  border: 0.809rem;
+  border: 0.61805rem;
   width: 100%; }
 
 a {

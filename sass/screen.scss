@@ -50,7 +50,11 @@ body {
 	color: $text-color;
 	font-family: $base-font-family;
 	font-size: rel($base-font-size);
-	line-height : $base-line-height;
+	line-height : rel($base-line-height);
+	border: rel($large-font-size);
+	border: rel($largest-font-size);
+	border: rel($small-font-size);
+	border: rel($smallest-font-size);
 	width : 100%;
 }
 
@@ -82,7 +86,7 @@ a {
 
 
 // Import base typography into the cascade (if required)
-// @import "libs/typography"; 		
+// @import "libs/typography";
 
 
 // Import form styles into the cascade (if required)
