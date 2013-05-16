@@ -6,7 +6,7 @@ $relative-sizing-unit		: 1rem !default; // This needs the one in front of it to 
 $absolute-sizing-unit		: 1px !default; // This needs the one in front of it to convert variables to numbers
 $base-font-size				: 16 !default;
 
-// Make px to rems using base-font-size 
+// Make px to rems using base-font-size
 // echo as: font-size: rel(#px);
 // if the base is another value, say 24px, write rel(12, 24)
 
@@ -17,7 +17,7 @@ $base-font-size				: 16 !default;
 }
 
 
-// Make px to % using 960px; 
+// Make px to % using 960px;
 // echo as: font-size: percent(10);
 // if the base is another value, say 16px, write percent(10, 16)
 

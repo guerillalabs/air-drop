@@ -42,7 +42,7 @@
                         // don't calculate the span if it goes the full width
                         @if $y != $i or $z != $x {
                             $selector: '.#{$prefix}#{$i}-#{$prefix}#{$x} .#{$prefix}#{$y}-#{$prefix}#{$z}';
-                            $inner-width: $inner-width + ($gutter / $width) + (nth($columns, $z) / $width);
+                            $inner-width: $inner-width + (($gutter * 100) / $width) + ((nth($columns, $z)*100) / $width);
                             $spans: append($spans, ($selector, ($inner-width + 0%)));
                         }
                     }

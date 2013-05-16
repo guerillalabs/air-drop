@@ -58,6 +58,8 @@ body {
 	width : 100%;
 }
 
+sup, sub { line-height:0; font-size:rel($smallest-font-size ); }
+
 a {
 	color: $link-color;
 	@include force-wrap;					// force text links to wrap
@@ -72,17 +74,18 @@ a {
 	}
 }
 
-// a {
-//     @include mq(500) {
-//         color: $black;
-//     }
-// }
+a {
+	display: block;
+    @include mq(500px) {
+        color: $black;
+    }
+}
 
-// @include mq((500, 800), true, true, (min, max), (width, width)) {
-//     a { color: $black; }
-//     em { color: $black; }
-//     strong { color: $black; }
-// }
+@include mq((500, 800), true, true, (min, max), (width, width)) {
+    a { color: $black; }
+    em { color: $black; }
+    strong { color: $black; }
+}
 
 
 // Import base typography into the cascade (if required)

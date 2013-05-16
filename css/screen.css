@@ -3,7 +3,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, img, ins, kbd, q, s, samp, small, strike, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
   font: inherit;
   font-size: 100%;
@@ -89,6 +89,10 @@ body {
   border: 0.61805rem;
   width: 100%; }
 
+sup, sub {
+  line-height: 0;
+  font-size: 0.61805rem; }
+
 a {
   color: #c64227;
   white-space: pre;
@@ -105,3 +109,19 @@ a {
     color: #8d2f1c; }
   a:focus, a:active {
     color: #aa3921; }
+
+a {
+  display: block; }
+  @media screen and (min-width: 500px) {
+    a {
+      color: #212420; } }
+
+@media screen and (min-width: 500) and (max-width: 800) {
+  a {
+    color: #212420; }
+
+  em {
+    color: #212420; }
+
+  strong {
+    color: #212420; } }
