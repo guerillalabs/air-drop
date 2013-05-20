@@ -91,17 +91,14 @@
       "outputAbbreviatedPath" : "\/js\/jquery-1.8.2.min-ck.js",
       "fileType" : 64
     },
-    "\/sass\/libs\/functions\/_tint-shade.scss" : {
+    "\/docs\/sass.html" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/functions\/_tint-shade.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_tint-shade.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/docs\/sass.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/sass\/grid.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -115,24 +112,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/index.html" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/sass\/libs\/addons\/_grid.scss" : {
+    "\/sass\/libs\/functions\/_tint-shade.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/addons\/_grid.scss",
+      "inputAbbreviatedPath" : "\/sass\/libs\/functions\/_tint-shade.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_grid.css",
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_tint-shade.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -147,6 +135,15 @@
       "outputAbbreviatedPath" : "\/js\/script-ck.js",
       "fileType" : 64
     },
+    "\/index.html" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/sass\/libs\/css3\/_radial-gradient.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -159,14 +156,17 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/docs\/sass.html" : {
+    "\/sass\/libs\/addons\/_grid.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/docs\/sass.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/sass\/libs\/addons\/_grid.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_grid.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/sass\/libs\/addons\/_vertical-rhythm.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -282,17 +282,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/js\/gridset-overlay.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/gridset-overlay.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/gridset-overlay-ck.js",
-      "fileType" : 64
-    },
     "\/sass\/libs\/addons\/_font-family.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -304,6 +293,17 @@
       "outputAbbreviatedPath" : "\/sass\/libs\/css\/_font-family.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/js\/gridset-overlay.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/gridset-overlay.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/gridset-overlay-ck.js",
+      "fileType" : 64
     },
     "\/type\/blokk\/BLOKKNeue-Regular_webfont.htm" : {
       "ignoreWasSetByUser" : 0,
@@ -347,15 +347,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/type\/blokk\/BLOKKNeue-Regular\/webfonts\/style.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/type\/blokk\/BLOKKNeue-Regular\/webfonts\/style.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/sass\/libs\/addons\/_triangle.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -367,6 +358,15 @@
       "outputAbbreviatedPath" : "\/sass\/libs\/css\/_triangle.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/type\/blokk\/BLOKKNeue-Regular\/webfonts\/style.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/type\/blokk\/BLOKKNeue-Regular\/webfonts\/style.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/sass\/libs\/addons\/_clearfix.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -592,6 +592,18 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/sass\/libs\/addons\/_button.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/libs\/addons\/_button.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_button.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
     "\/sass\/libs\/css3\/_transition.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -601,18 +613,6 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/sass\/libs\/css\/_transition.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
-    "\/sass\/lte-ie8-grid.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/lte-ie8-grid.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/lte-ie8-grid.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -652,15 +652,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/libs\/addons\/_button.scss" : {
+    "\/sass\/lte-ie8-grid.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/addons\/_button.scss",
+      "inputAbbreviatedPath" : "\/sass\/lte-ie8-grid.scss",
       "outputStyle" : 0,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_button.css",
+      "outputAbbreviatedPath" : "\/css\/lte-ie8-grid.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -709,18 +709,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/sass\/libs\/css3\/_animation.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_animation.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_animation.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/libs\/css3\/_border-image.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -732,6 +720,15 @@
       "outputAbbreviatedPath" : "\/sass\/libs\/css\/_border-image.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/docs\/index.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/docs\/index.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/sass\/libs\/addons\/_advanced-typography.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -757,14 +754,17 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/docs\/index.html" : {
+    "\/sass\/libs\/css3\/_animation.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/docs\/index.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/sass\/libs\/css3\/_animation.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/libs\/css\/_animation.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     }
   },
   "manualImportLinks" : [
