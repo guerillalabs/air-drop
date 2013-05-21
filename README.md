@@ -2,6 +2,10 @@
 
 A little something to kick off all your campaigns.
 
+## Cloning
+
+git push git@github.com:guerillalabs/air-drop--Jekyll.git +master:master
+
 ## Submodules
 
 **For the time being, all submodules have been removed from this repo. Some may be added back when this hits 1.0.** In the meantime, below are all the commands needed to work with the submodules properly.
