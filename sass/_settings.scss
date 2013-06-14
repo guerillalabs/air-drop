@@ -51,16 +51,16 @@ $code-font-family			: $monospace;
 
 $pad-small					: $base-font-size / 2;
 $pad						: $base-font-size;
-$pad-large					: $base-font-size * $base-line-height;
+$pad-large					: $base-line-height;
 
 $vertical-rhythm 			: $base-font-size / 2;	// should equal a whole number
 
 // breakpoints
-$bp-small					: (480/$base-font-size) + 0rem;
-$bp-medium					: (768/$base-font-size) + 0rem;
-$bp-large					: (992/$base-font-size) + 0rem;
+$bp-small                   : 480/16 + 0em;
+$bp-medium                  : 768/16 + 0em;
+$bp-large                   : 992/16 + 0em;
 
-$maxwidth					: (1440/$base-font-size) + 0rem;
+$maxwidth                   : 1440/16 + 0em;
 
 // grid dimensions
 @function grid-cols($prefix){
