@@ -83,10 +83,6 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 27px;
-  border: 29px;
-  border: 47px;
-  border: 15px;
-  border: 11px;
   width: 100%; }
 
 sup, sub {
@@ -109,15 +105,3 @@ a {
     color: #8d2f1c; }
   a:focus, a:active {
     color: #aa3921; }
-
-a {
-  display: block; }
-  .lte-ie8 a {
-    color: #212420; }
-
-.lte-ie8 a {
-  color: #212420; }
-.lte-ie8 em {
-  color: #212420; }
-.lte-ie8 strong {
-  color: #212420; }
