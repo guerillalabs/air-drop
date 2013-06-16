@@ -83,10 +83,6 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
-  border: 1.618rem;
-  border: 2.61792rem;
-  border: 0.809rem;
-  border: 0.61805rem;
   width: 100%; }
 
 sup, sub {
@@ -109,19 +105,3 @@ a {
     color: #8d2f1c; }
   a:focus, a:active {
     color: #aa3921; }
-
-a {
-  display: block; }
-  @media screen and (min-width: 500px) {
-    a {
-      color: #212420; } }
-
-@media screen and (min-width: 500) and (max-width: 800) {
-  a {
-    color: #212420; }
-
-  em {
-    color: #212420; }
-
-  strong {
-    color: #212420; } }

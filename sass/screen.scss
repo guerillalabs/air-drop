@@ -50,12 +50,8 @@ body {
 	color: $text-color;
 	font-family: $base-font-family;
 	font-size: rel($base-font-size);
-	line-height : rel($base-line-height);
-	border: rel($large-font-size);
-	border: rel($largest-font-size);
-	border: rel($small-font-size);
-	border: rel($smallest-font-size);
-	width : 100%;
+	line-height: rel($base-line-height);
+	width: 100%;
 }
 
 sup, sub { line-height:0; font-size:rel($smallest-font-size ); }
@@ -73,27 +69,6 @@ a {
 		color: $link-color-focus;
 	}
 }
-
-a {
-	display: block;
-    @include mq(500px) {
-        color: $black;
-    }
-}
-
-@include mq((500, 800), true, true, (min, max), (width, width)) {
-    a { color: $black; }
-    em { color: $black; }
-    strong { color: $black; }
-}
-
-
-// Import base typography into the cascade (if required)
-// @import "libs/typography";
-
-
-// Import form styles into the cascade (if required)
-// @import "libs/forms";
 
 
 
