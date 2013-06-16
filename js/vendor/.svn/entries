@@ -1,0 +1,53 @@
+8
+
+dir
+1666
+http://jfentre@vala.lifeway.org/svn/gx_lifeway/branches/v3.lifeway.com/js/vendor
+http://jfentre@vala.lifeway.org/svn/gx_lifeway
+
+
+
+2013-05-13T18:53:24.030618Z
+1600
+jfentre
+
+
+svn:special svn:externals svn:needs-lock
+
+jquery-1.9.1.min.js
+file
+
+
+
+
+2013-05-13T17:50:47.000000Z
+397754ba49e9e0cf4e7c190da78dda05
+2013-05-13T18:53:24.030618Z
+1600
+jfentre
+
+yepnope.min.js
+file
+
+
+
+
+2013-05-10T22:11:33.000000Z
+268ef5b4376032eac5a3db118a60332f
+2013-05-13T18:53:24.030618Z
+1600
+jfentre
+has-props
+
+html5shiv.js
+file
+
+
+
+
+2013-05-10T22:14:34.000000Z
+62ac572189514315ebfb31c43a225009
+2013-05-13T18:53:24.030618Z
+1600
+jfentre
+

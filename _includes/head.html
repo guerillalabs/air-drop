@@ -1,0 +1,77 @@
+<!doctype html>
+<!--[if (lte IE 8)&!(IEMobile)]><html class="no-js lte-ie8" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if page.description %}
+        <meta name="description" content="{{ description }}">
+    {% endif %}
+
+    <!-- TITLE -->
+    <title>{{ page.title }} | {{ site.name }}</title>
+
+    <!-- CSS -->
+    <!-- For old IE -->
+    <!--[if (lte IE 8)&!(IEMobile)]>
+        <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/lte-ie8.css'>
+        <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/lte-ie8-grid.css'>
+        {% if page.css %}
+            <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/lte-ie8-{{page.css}}'>
+        {% endif %}
+    <![endif]-->
+
+    <!-- For all other browsers -->
+    <!--[if gt IE 8]><!-->
+        <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/screen.css'>
+        <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/grid.css'>
+        {% if page.css %}
+            <link href="{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}{{ page.css }}" rel="stylesheet" media="all">
+        {% endif %}
+    <!--<![endif]-->
+
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+    <!-- JS -->
+    <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js'); document.documentElement.setAttribute('data-useragent', navigator.userAgent);</script>
+    <script src="{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}js/vendor/yepnope.min.js?v=1.5.4"></script>
+
+    <!-- HTML5 Shiv for old IE -->
+    <!--[if (lte IE 8)&!(IEMobile)]>
+    <script>
+        yepnope.injectJs('{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}js/vendor/html5shiv.js');
+    </script>
+    <![endif]-->
+
+    {% comment %}
+    <!-- Typekit -->
+    <script>
+        yepnope.injectJs('//use.typekit.net/yiy1stl.js', function() { try{Typekit.load();}catch(e){} });
+    </script>
+    {%if page.typekit %}
+    <script>
+        yepnope.injectJs('//use.typekit.net/{{ page.typekit }}.js', function() { try{Typekit.load();}catch(e){} });
+    </script>
+    {% endif %}
+    {% endcomment %}
+
+    <!-- jQuery and Global Functionality -->
+    <script>
+    yepnope([{
+        load: '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+        complete: function () {
+            if (!window.jQuery) {
+                yepnope('{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}js/vendor/jquery-1.9.1.min.js');
+            }
+        }
+    }, {
+        load: ['{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}js/global.min.js'{% if site.dev %}, '{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}js/gridset-overlay.js'{% endif %}{% if page.javascript %}, '{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}js/{{ page.javascript }}'{% endif %}]
+    }]);
+    </script>
+</head>
+<body>

@@ -1,4 +1,6 @@
 name:        Site Name
+dev:         true
+relative_paths: true
 
 safe:        false
 host:        0.0.0.0

@@ -32,9 +32,12 @@ $base-line-height			: 18 * 1.5;
 
 
 // typefaces
-$base-font-family			: $helvetica;
+@include font-face('BLOKKRegular', '../type/BLOKKRegular/webfonts/BLOKKRegular');
+//@include font-face('BLOKKNeue-Regular', '../type/BLOKKNeue-Regular/webfonts/BLOKKNeue-Regular');
 
-$alt-font-family			: $palatino;
+$base-font-family			: BLOKKNRegular, $helvetica;
+
+$alt-font-family			: BLOKKRegular, $palatino;
 
 // Your headings may inherit the base typeface, or you may set a different font stack
 $heading-font-family		: $alt-font-family;

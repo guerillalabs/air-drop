@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "BLOKKRegular";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../type/BLOKKRegular/webfonts/BLOKKRegular.eot");
+  src: url("../type/BLOKKRegular/webfonts/BLOKKRegular.eot?#iefix") format("embedded-opentype"), url("../type/BLOKKRegular/webfonts/BLOKKRegular.woff") format("woff"), url("../type/BLOKKRegular/webfonts/BLOKKRegular.ttf") format("truetype"), url("../type/BLOKKRegular/webfonts/BLOKKRegular.svg#BLOKKRegular") format("svg"); }
+
 *, :before, :after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -80,7 +87,7 @@ html {
 body {
   background-color: transparent;
   color: #212420;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: BLOKKNRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 27px;
   width: 100%; }

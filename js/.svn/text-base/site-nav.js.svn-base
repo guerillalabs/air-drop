@@ -1,0 +1,40 @@
+var LW = {};
+
+LW.menu = (function($) {
+    var menuShow = function(){
+        $('.sections-heading li:first-child a').click(function(e){
+            e.preventDefault();
+            $('#menu').toggle();
+        });
+    };
+
+    var searchShow = function(){
+        $('.sections-heading li:nth-child(2) a').click(function(e){
+            e.preventDefault();
+            $('.site-search').toggle();
+        });
+    };
+
+    var cartItems = function(){
+        if( $('#cart').hasClass('items') ) {
+            $('.sections-heading .cart').addClass('items');
+        }
+    };
+
+    return function(){
+        if( $('#menu').css('display') === 'none' ) {
+            menuShow();
+            searchShow();
+            cartItems();
+        }
+    };
+}( jQuery ));
+
+
+$(function(){
+    LW.menu();
+});
+
+$(window).resize(function(){
+    LW.menu();
+});
