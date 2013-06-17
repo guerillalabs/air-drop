@@ -35,7 +35,7 @@ $base-line-height           : 18 * 1.5;
 @include font-face('BLOKKRegular', '#{$base-url}type/BLOKKRegular/webfonts/BLOKKRegular');
 //@include font-face('BLOKKNeue-Regular', '#{$base-url}type/BLOKKNeue-Regular/webfonts/BLOKKNeue-Regular');
 
-$base-font-family			: BLOKKNRegular, $helvetica;
+$base-font-family			: BLOKKRegular, $helvetica;
 
 $alt-font-family			: BLOKKRegular, $palatino;
 
