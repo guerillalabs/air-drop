@@ -2,8 +2,8 @@
   font-family: "BLOKKRegular";
   font-weight: normal;
   font-style: normal;
-  src: url("../type/BLOKKRegular/webfonts/BLOKKRegular.eot");
-  src: url("../type/BLOKKRegular/webfonts/BLOKKRegular.eot?#iefix") format("embedded-opentype"), url("../type/BLOKKRegular/webfonts/BLOKKRegular.woff") format("woff"), url("../type/BLOKKRegular/webfonts/BLOKKRegular.ttf") format("truetype"), url("../type/BLOKKRegular/webfonts/BLOKKRegular.svg#BLOKKRegular") format("svg"); }
+  src: url("/type/BLOKKRegular/webfonts/BLOKKRegular.eot");
+  src: url("/type/BLOKKRegular/webfonts/BLOKKRegular.eot?#iefix") format("embedded-opentype"), url("/type/BLOKKRegular/webfonts/BLOKKRegular.woff") format("woff"), url("/type/BLOKKRegular/webfonts/BLOKKRegular.ttf") format("truetype"), url("/type/BLOKKRegular/webfonts/BLOKKRegular.svg#BLOKKRegular") format("svg"); }
 
 @media screen and (max-width: 30em) {
   [class*=' s1'], [class^=s1], [class*=' s2'], [class^=s2], [class*=' s3'], [class^=s3], [class*=' s4'], [class^=s4], .s-all {

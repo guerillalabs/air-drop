@@ -15,25 +15,25 @@
 // =====================================================================
 
 // set the base url of the site (helpful for switching between server environments)
-$base-url					: '/';				// typically '/' or '../'
+$base-url                   : '/' !default; // typically '/' or '../'
 
 
 
-// ::Typography			================================================
+// ::Typography         ================================================
 // =====================================================================
 
-$base-font-size				: 18;
+$base-font-size             : 18;
 $small-font-size            : golden-ratio(($base-font-size / 2), 1);
 $smallest-font-size         : golden-ratio($base-font-size, -1);
 $large-font-size            : golden-ratio($base-font-size, 1);
 $largest-font-size          : golden-ratio($base-font-size, 2);
 
-$base-line-height			: 18 * 1.5;
+$base-line-height           : 18 * 1.5;
 
 
 // typefaces
-@include font-face('BLOKKRegular', '../type/BLOKKRegular/webfonts/BLOKKRegular');
-//@include font-face('BLOKKNeue-Regular', '../type/BLOKKNeue-Regular/webfonts/BLOKKNeue-Regular');
+@include font-face('BLOKKRegular', '#{$base-url}type/BLOKKRegular/webfonts/BLOKKRegular');
+//@include font-face('BLOKKNeue-Regular', '#{$base-url}type/BLOKKNeue-Regular/webfonts/BLOKKNeue-Regular');
 
 $base-font-family			: BLOKKNRegular, $helvetica;
 
