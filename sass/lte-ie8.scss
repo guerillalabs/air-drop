@@ -1,4 +1,2 @@
-$relative-sizing	: false;
-$lte-ie8			: 'only';
-
-@import "screen"; 
+@import "lte-ie8-dev";
+@import "lte-ie8-grid";

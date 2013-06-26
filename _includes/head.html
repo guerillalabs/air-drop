@@ -15,8 +15,13 @@
     <!-- CSS -->
     <!-- For old IE -->
     <!--[if (lte IE 8)&!(IEMobile)]>
-        <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/lte-ie8.css'>
-        <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/lte-ie8-grid.css'>
+        {% if site.dev %}
+            <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/lte-ie8-dev.css'>
+            <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/lte-ie8-grid.css'>
+            <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/grid-overlay.css'>
+        {% else %}
+            <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/lte-ie8.css'>
+        {% endif %}
         {% if page.css %}
             <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/lte-ie8-{{page.css}}'>
         {% endif %}
@@ -24,10 +29,15 @@
 
     <!-- For all other browsers -->
     <!--[if gt IE 8]><!-->
-        <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/screen.css'>
-        <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/grid.css'>
+        {% if site.dev %}
+            <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/screen-dev.css'>
+            <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/grid.css'>
+            <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/grid-overlay.css'>
+        {% else %}
+            <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/screen.css'>
+        {% endif %}
         {% if page.css %}
-            <link href="{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}{{ page.css }}" rel="stylesheet" media="all">
+            <link href="{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/{{ page.css }}" rel="stylesheet" media="all">
         {% endif %}
     <!--<![endif]-->
 
@@ -70,7 +80,7 @@
             }
         }
     }, {
-        load: ['{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}js/global.min.js'{% if site.dev %}, '{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}js/gridset-overlay.js'{% endif %}{% if page.javascript %}, '{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}js/{{ page.javascript }}'{% endif %}]
+        load: ['{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}js/global.min.js'{% if site.dev %}, '{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}js/grid-overlay.js'{% endif %}{% if page.javascript %}, '{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}js/{{ page.javascript }}'{% endif %}]
     }]);
     </script>
 </head>
