@@ -1,6 +1,7 @@
 <!doctype html>
-<!--[if (lte IE 8)&!(IEMobile)]><html class="no-js lte-ie8" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<!--[if (lte IE 8)&!(IEMobile)]><html class="no-js lte-ie8 lte-ie9" lang="en"><![endif]-->
+<!--[if (lte IE 9)&!(IEMobile)]><html class="no-js lte-ie9" lang="en"><![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
     <!-- META -->
     <meta charset="UTF-8">
@@ -53,9 +54,7 @@
 
     <!-- HTML5 Shiv for old IE -->
     <!--[if (lte IE 8)&!(IEMobile)]>
-    <script>
-        yepnope.injectJs('{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}js/vendor/html5shiv.js');
-    </script>
+    <script type="text/javascript" src="{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}js/vendor/html5shiv.js"></script>
     <![endif]-->
 
     {% comment %}
