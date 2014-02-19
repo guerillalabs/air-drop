@@ -1,0 +1,20 @@
+{
+  "name": "air-drop",
+  "version": "0.0.1",
+  "author": "Jacob Fentress",
+  "license": "BSD-2-Clause",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.11.0",
+    "html5shiv": "~3.7.0",
+    "yepnope": "~1.5.4"
+  }
+}
