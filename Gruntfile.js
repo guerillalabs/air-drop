@@ -50,11 +50,10 @@ module.exports = function(grunt) {
         watch: {
             css: {
                 files: 'sass/*.scss',
-                tasks: ['sass', 'autoprefixer', 'jekyll:dev'],
+                tasks: ['sass', 'autoprefixer'],
                 options: {
                     spawn: false,
-                    interrupt: true,
-                    livereload: true
+                    interrupt: true
                 }
             },
 
@@ -63,7 +62,6 @@ module.exports = function(grunt) {
                 tasks: ['jekyll:dev'],
                 options: {
                     spawn: false,
-                    interrupt: true,
                     livereload: true
                 }
             }

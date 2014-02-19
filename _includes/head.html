@@ -39,38 +39,21 @@
 
 
     <!-- JS -->
-    <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js'); document.documentElement.setAttribute('data-useragent', navigator.userAgent);</script>
-    <script src="{{ relative }}vendor/yepnope/yepnope.1.5.4-min.js"></script>
+    <script>var b = document.documentElement; b.className = b.className.replace(/\bno-js\b/,'js'); b.setAttribute('data-useragent', navigator.userAgent); b.setAttribute("data-platform", navigator.platform );</script>
 
     <!-- HTML5 Shiv for old IE -->
     <!--[if (lte IE 8)&!(IEMobile)]>
     <script type="text/javascript" src="{{ site.baseurl }}vendor/html5shiv/dist/html5shiv.js"></script>
     <![endif]-->
 
-    {% comment %}
-    <!-- Typekit -->
-    <script>
-        yepnope.injectJs('//use.typekit.net/yiy1stl.js', function() { try{Typekit.load();}catch(e){} });
-    </script>
-    {%if page.typekit %}
-    <script>
-        yepnope.injectJs('//use.typekit.net/{{ page.typekit }}.js', function() { try{Typekit.load();}catch(e){} });
-    </script>
+    <!-- Fonts -->
+    {%if site.typekit %}
+    <script src="//use.typekit.net/{{ site.typekit }}.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     {% endif %}
-    {% endcomment %}
-
-    <!-- jQuery and Global Functionality -->
-    <script>
-    yepnope([{
-        load: '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js',
-        complete: function () {
-            if (!window.jQuery) {
-                yepnope('{{ relative }}vendor/jquery/dist/jquery.min.js');
-            }
-        }
-    }, {
-        load: ['{{ relative }}js/global.min.js'{% if page.javascript %}, '{{ relative }}js/{{ page.javascript }}'{% endif %}]
-    }]);
-    </script>
+    {%if page.typekit %}
+    <script src="//use.typekit.net/{{ page.typekit }}.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    {% endif %}
 </head>
 <body>
