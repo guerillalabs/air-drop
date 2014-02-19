@@ -30,13 +30,7 @@
 
     <!-- For all other browsers -->
     <!--[if gt IE 8]><!-->
-        {% if site.dev %}
-            <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/screen-dev.css'>
-            <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/grid.css'>
-            <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/grid-overlay.css'>
-        {% else %}
             <link rel='stylesheet' href='{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/screen.css'>
-        {% endif %}
         {% if page.css %}
             <link href="{% if site.relative_paths %}{{ page.baseurl }}{% endif %}{{ site.baseurl }}css/{{ page.css }}" rel="stylesheet" media="all">
         {% endif %}

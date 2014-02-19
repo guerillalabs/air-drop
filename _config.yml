@@ -14,7 +14,7 @@ destination: ./_site
 plugins:     ./_plugins
 layouts:     ./_layouts
 include:     ['.htaccess']
-exclude:     [ sass, Rakefile, codekit-config.json ]
+exclude:     [ sass, node_modules, Gruntfile.js, package.json, README.md ]
 
 future:      true
 show_drafts: nil
