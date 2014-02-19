@@ -3,6 +3,8 @@
 <!--[if (lte IE 9)&!(IEMobile)]><html class="no-js lte-ie9" lang="en"><![endif]-->
 <!--[if gt IE 9]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
+    {% capture lvl %}{{ page.url | append:'index.html' | split:'/' | size }}{% endcapture %}
+    {% capture relative %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
     <!-- META -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,17 +18,17 @@
     <!-- CSS -->
     <!-- For old IE -->
     <!--[if (lte IE 8)&!(IEMobile)]>
-        <link rel='stylesheet' href='{{ site.baseurl }}css/lte-ie8.css'>
+        <link rel='stylesheet' href='{{ relative }}css/lte-ie8.css'>
         {% if page.css %}
-            <link rel='stylesheet' href='{{ site.baseurl }}css/lte-ie8-{{page.css}}'>
+            <link rel='stylesheet' href='{{ relative }}css/lte-ie8-{{page.css}}'>
         {% endif %}
     <![endif]-->
 
     <!-- For all other browsers -->
     <!--[if gt IE 8]><!-->
-        <link rel='stylesheet' href='{{ site.baseurl }}css/screen.css'>
+        <link rel='stylesheet' href='{{ relative }}css/screen.css'>
         {% if page.css %}
-            <link rel='stylesheet' href='{{ site.baseurl }}css/{{ page.css }}'>
+            <link rel='stylesheet' href='{{ relative }}css/{{ page.css }}'>
         {% endif %}
     <!--<![endif]-->
 
@@ -38,7 +40,7 @@
 
     <!-- JS -->
     <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js'); document.documentElement.setAttribute('data-useragent', navigator.userAgent);</script>
-    <script src="{{ site.baseurl }}vendor/yepnope/yepnope.1.5.4-min.js"></script>
+    <script src="{{ relative }}vendor/yepnope/yepnope.1.5.4-min.js"></script>
 
     <!-- HTML5 Shiv for old IE -->
     <!--[if (lte IE 8)&!(IEMobile)]>
@@ -63,11 +65,11 @@
         load: '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js',
         complete: function () {
             if (!window.jQuery) {
-                yepnope('{{ site.baseurl }}vendor/jquery/dist/jquery.min.js');
+                yepnope('{{ relative }}vendor/jquery/dist/jquery.min.js');
             }
         }
     }, {
-        load: ['{{ site.baseurl }}js/global.min.js'{% if page.javascript %}, '{{ site.baseurl }}js/{{ page.javascript }}'{% endif %}]
+        load: ['{{ relative }}js/global.min.js'{% if page.javascript %}, '{{ relative }}js/{{ page.javascript }}'{% endif %}]
     }]);
     </script>
 </head>

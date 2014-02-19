@@ -16,10 +16,12 @@ Look, we realize you can't use Jekyll for a lot of client projects – us either
 * [Jekyll](http://jekyllrb.com)
 * [grunt-cli](http://gruntjs.com/getting-started#installing-the-cli)
 
+Though not a requirement, to take advantage of LiveReload, you'll want to install the [browser extensions](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-).
+
 ## Getting Started
 
 When you first download the repo, you will want to open the project directory in terminal and run `npm install`. This will download all the packages you need to run grunt, sass and autoprefixer on this project.
 
 Next, run `bower install`. This will download jQuery and other third-party libraries used in this project.
 
-Running `grunt` will start the Jekyll server and the task that watches for changes to your files. The server is accessible from `localhost:4000` (or `0.0.0.0:4000` depending on which URL style you prefer). To kill the server, type `ctrl`+`c` in the terminal.
+Running `grunt` will start the Jekyll server and the task that watches for changes to your files. The server is accessible from `localhost:4000` (or `0.0.0.0:4000` depending on which URL style you prefer). To kill the server, type `ctrl` + `c` in the terminal.
