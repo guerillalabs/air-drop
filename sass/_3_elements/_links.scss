@@ -24,10 +24,11 @@
 // --------------------------------------------------------
 
 a {
-
-  &:hover {
-    text-decoration: none;
-  }
+    transition: color .3s ease-in-out;
+    &:link { color: $blue; }
+    &:visited { color: $purple; }
+    &:hover { color: $&qua; }
+    a:active { color: $orange; }
 }
 
 

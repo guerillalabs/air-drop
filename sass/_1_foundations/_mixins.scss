@@ -1,137 +1,23 @@
-/**
+//
+//   @mixins
+// --------------------------------------------------------
+//  _1_foundations/_mixins.scss
+// --------------------------------------------------------
+//
+//  Here be mixins.
+//
+// --------------------------------------------------------
 
-  @mixins
---------------------------------------------------------
-  _1_foundations/_mixins.scss
---------------------------------------------------------
+  @import "_mixins/ratios";
 
-  Here you'll find a nice arrow helper and a font embedder
+  @import "_mixins/timing-functions";
 
------------------------------------------------------  */
+  @import "_mixins/arrow";
 
+  @import "_mixins/embed-fonts";
 
+  @import "_mixins/unity";
 
-/*
+  @import "_mixins/media-queries";
 
-  Arrow
----------------------------------------------------------
-  @arrow
-
-  A mixin to create an arrow relative to a parent.  Note
-  that your parent element will need to have relative,
-  absolute, or fixed position declared.
-
-  The arguments are:
-
-    Position: top / right / bottom / left
-    Background Color
-    Size
-    Border Color
-    Border Size
-
---------------------------------------------------------- */
-
-  @mixin arrow( $position, $bg-color, $size, $border-color, $border-size ) {
-
-    &:before,
-    &:after {
-      z-index: 100;
-    	border: solid transparent;
-      border-width: $size;
-    	content: " ";
-    	height: 0;
-    	width: 0;
-    	position: absolute;
-    	pointer-events: none;
-
-      // If position is top
-      @if $position == "top" {
-        bottom: 100%;
-        border-bottom-color: $bg-color;
-        left: 50%;
-        margin-left: -$size;
-      }
-      // if position is right
-      @if $position == "right" {
-        left: 100%;
-        border-left-color: $bg-color;
-        top: 50%;
-        margin-top: -$size;
-      }
-      // If position is bottom
-      @if $position == "bottom" {
-        top: 100%;
-        border-top-color: $bg-color;
-        left: 50%;
-        margin-left: -$size;
-      }
-      // If position is left
-      @if $position == "left" {
-        right: 100%;
-        border-right-color: $bg-color;
-        top: 50%;
-        margin-top: -$size;
-      }
-
-    }
-
-    $border-size: $size + ($border-size*1.5);
-
-    &:after {
-      z-index: 90;
-      border-width: $border-size;
-      // If position is top
-      @if $position == "top" {
-        border-bottom-color: $border-color;
-        margin-left: -$border-size;;
-      }
-      // if position is right
-      @if $position == "right" {
-        border-left-color: $border-color;
-        margin-top: -$border-size;
-      }
-      // If position is bottom
-      @if $position == "bottom" {
-        border-top-color: $border-color;
-        margin-left: -$border-size;
-      }
-      // If position is left
-      @if $position == "left" {
-        border-right-color: $border-color;
-        margin-top: -$border-size;
-      }
-    }
-
-  }
-
-
-
-
-
-
-
-/*
-
-  FONT FACE IMPORT
----------------------------------------------------------
-  @font-face
-
-  Use this mixin to embed a font
-
-  $font-name is used in your css in font-family declarations
-  $font-filepath-and-name is the location of your font
-  file and the filename WITHOUT the file extension.  The
-  extensions are added here in the mixin
-
---------------------------------------------------------- */
-
-@mixin embed-font($font-name, $font-filepath-and-name){
-  @font-face {
-  	font-family: $font-name;
-  	src: url($font-filepath-and-name+".eot"); /* IE9 Compat Modes */
-  	src: url($font-filepath-and-name+".eot?#iefix") format('embedded-opentype'), /* IE6-IE8 */
-  	     url($font-filepath-and-name+".woff") format('woff'), /* Modern Browsers */
-  	     url($font-filepath-and-name+".ttf")  format('truetype'), /* Safari, Android, iOS */
-  	     url($font-filepath-and-name+".svg#svgFontName") format('svg'); /* Legacy iOS */
-  	}
-}
+  @import "_mixins/grid";

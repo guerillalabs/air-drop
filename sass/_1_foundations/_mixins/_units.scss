@@ -1,0 +1,45 @@
+//
+//   @units
+// --------------------------------------------------------
+//  _1_foundations/_mixins/_units.scss
+// --------------------------------------------------------
+//
+//  Functions for pixel conversions
+//
+// --------------------------------------------------------
+
+$relative-sizing: true !default; // Set to false if you want to use absolute pixels in your dimensions
+$relative-sizing-unit: 1rem !default; // This needs the one in front of it to convert variables to numbers
+$absolute-sizing-unit: 1px !default; // This needs the one in front of it to convert variables to numbers
+$base-font-size: 16 !default;
+
+
+
+
+// Make px to rems using base-font-size
+// echo as: font-size: rel(#px);
+// if the base is another value, say 24px, write rel(12, 24)
+@function rel($target, $context: $base-font-size) {
+    @if strip-units($target) == 0 { @return 0 }
+    @else if not $relative-sizing { @return (round(strip-units($target))) * $absolute-sizing-unit }
+    @else { @return (strip-units($target) / strip-units($context)) * $relative-sizing-unit }
+}
+
+
+
+
+// Make px to % using 960px;
+// echo as: font-size: percent(10);
+// if the base is another value, say 16px, write percent(10, 16)
+@function percent($target, $context: 960) {
+    @if strip-units($target) == 0 { @return 0 }
+    @return (strip-units($target) / strip-units($context)) * 100%;
+}
+
+
+
+
+// to remove the unit from the numbers that are passed
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
