@@ -1,0 +1,45 @@
+//
+//   @site-document
+// --------------------------------------------------------
+//  _5_sections/_site-document.scss
+// --------------------------------------------------------
+//
+//  Main HTML structure & styles
+//  Main body structure & styles
+//
+// --------------------------------------------------------
+
+
+
+
+//   @HTML
+// --------------------------------------------------------
+//  HTML should contain the site's default background color
+//  and font-size
+// --------------------------------------------------------
+
+html {
+  background: $black;
+  font-size: 100%; // HTML must be at 100% font-size for em-based media queries
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+
+
+
+//   @body
+// --------------------------------------------------------
+//  Body should contain the document's default font and
+//  background color for the content, if that background
+//  color is different than the html.
+// --------------------------------------------------------
+
+body {
+  background: $white;
+  color: $black;
+  @include sans;
+  @include text-m;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.111;
+}

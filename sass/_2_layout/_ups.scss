@@ -1,0 +1,85 @@
+//
+//   @ups
+// --------------------------------------------------------
+//  _2_layout/_ups.scss
+// --------------------------------------------------------
+//
+//  UPS?
+//
+//  Yep, ups.  These are global classes that will set
+//  their direct children to a specific width.  You will
+//  mainly use these in grids, and maybe with tabs or
+//  navigations.
+//
+//  For instance: four-up will set each child to 25%
+//
+//  Ups combined with grids will responsively stack at
+//  whatever width you've declared as $grid-stack-at-width
+//
+//  Example: Ups and grids
+//  <div class="gw two-up">
+//    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+//    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+//  </div><!--/gw-->
+//  <div class="gw three-up">
+//    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+//    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+//    <div class="g"><img src="http://fillmurray.com/500/300"></div>
+//  </div><!--/gw-->
+//
+// -------------------------------------------------------
+
+// Two up
+.two-up > * {
+  width: 50%;
+}
+
+// Three up
+.three-up > * {
+  width: 33.333333%;
+}
+
+// Four up
+.four-up > * {
+  width: 25%;
+}
+
+// Five up
+.five-up > * {
+  width: 20%;
+}
+
+// Six up
+.six-up > * {
+  width: 16.6666666%;
+}
+
+// Seven up
+.seven-up > * {
+ width: 14.285714286%;
+}
+
+// Eight up
+.eight-up > * {
+  width: 12.5%;
+}
+
+// Nine up
+.nine-up > * {
+  width: 11.111111111%;
+}
+
+// Ten up
+.ten-up > * {
+  width: 10%;
+}
+
+// Eleven up
+.eleven-up > * {
+ width: 9.090909091%;
+}
+
+// Twelve up
+.twelve-up > * {
+  width: 8.333333333%;
+}

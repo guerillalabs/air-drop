@@ -1,0 +1,327 @@
+//
+//   @forms
+// ---------------------------------------------------------
+//  _3_elements/_forms.scss
+// ---------------------------------------------------------
+//
+//  Base styles for all forms and form related elements
+//
+//  Below you'll set styles for all forms, and if you have
+//  any specific kinds of forms, like a search form that you
+//  create a classname of form--search, put that at the
+//  bottom of this partial.
+//
+// ---------------------------------------------------------
+//
+//  Here's an example form, forms consist of
+//  - header
+//  - fields
+//  - action
+//
+//  Example: Our Form
+//  <form>
+//    <header>
+//      <h1>Super cool form, we love it</h1>
+//    </header>
+//    <article class="field">
+//      <p>Here is some intro text of this field before the actual input</p>
+//      <div class="field__input">
+//        <label class="input__label">Your Name</label>
+//        <input type="text">
+//      </div>
+//      <span class="field__feedback"></span>
+//      <span class="field__hint"></span>
+//    </article>
+//    <article class="field">
+//      <p class="field__text">Here is some intro text of this field</p>
+//      <div class="field__input">
+//        <label class="input__label">Your Email</label>
+//        <input type="email">
+//      </div>
+//      <span class="field__feedback"></span>
+//      <span class="field__hint"></span>
+//    </article>
+//    <footer class="action">
+//      <input type="submit" class="btn" value="Submit">
+//    </footer>
+//  </form>
+//
+// -------------------------------------------------------
+
+form {
+}
+
+
+
+
+//
+//   @form-header
+// --------------------------------------------------------
+//
+//  A form header usually consists of a title and some
+//  copy.
+//
+// --------------------------------------------------------
+
+// any base styling on form headers
+.form__header {
+}
+
+
+
+
+//
+//   @field
+//--------------------------------------------------------
+//
+//  A field is an article that contains the input and anything
+//  related to the input.
+//
+//--------------------------------------------------------
+
+.field {
+  position: relative;
+}
+
+
+
+
+//
+//   @field__input
+//--------------------------------------------------------
+//
+//  The div surrounding inputs
+//
+//--------------------------------------------------------
+
+.field__input {
+}
+
+
+
+
+//
+//   @inputs
+// --------------------------------------------------------
+//
+//  The inputs
+//
+// --------------------------------------------------------
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=number],
+input[type=datetime],
+input[type=date],
+input[type=tel],
+input[type=month],
+input[type=week],
+input[type=search],
+textarea,
+select {
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// @radios
+input[type="radio"] {
+  -webkit-appearance:none;
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  &:checked {
+    background: white;
+  }
+}
+
+
+
+
+//
+//   @placeholders
+// --------------------------------------------------------
+//
+//  The placeholders
+//
+// --------------------------------------------------------
+
+input {
+  &::-webkit-input-placeholder {
+    color: $input-placeholder;
+  }
+  &:-moz-placeholder {
+    color: $input-placeholder;
+  }
+  &::-moz-placeholder {
+    color: $input-placeholder;
+  }
+  &:-ms-input-placeholder {
+    color: $input-placeholder;
+  }
+}
+// Placeholders on focus
+input:focus {
+  &::-webkit-input-placeholder {
+    opacity: .3;
+  }
+  &:-moz-placeholder {
+    opacity: .3;
+  }
+  &::-moz-placeholder {
+    opacity: .3;
+  }
+  &:-ms-input-placeholder {
+    opacity: .3;
+  }
+}
+
+
+
+
+//
+//   @field__label
+// --------------------------------------------------------
+//
+//  labels
+//
+// --------------------------------------------------------
+
+.field__label {
+  display: block;
+}
+
+// labels for checkboxes and radios
+.field__label--radio {
+  @extend %clearfix;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  .radio__text {
+    overflow: hidden;
+    margin-left: 2rem;
+  }
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+
+
+//
+//   @field__feedback
+// --------------------------------------------------------
+//
+//  Here's a little feedback
+//
+// --------------------------------------------------------
+
+.field__feedback {
+  display: none;
+  color: rgba(218, 35, 0, 0.6);
+  position: absolute;
+  right: 0;
+}
+
+
+
+
+//
+//   @field__hint
+// --------------------------------------------------------
+//
+//  hints
+//
+// --------------------------------------------------------
+
+.field__hint {
+  color: rgba(218, 35, 0, 0.6);
+  display: none;
+  position: absolute;
+  right: 0;
+}
+
+
+
+
+//
+//   @error-states
+// --------------------------------------------------------
+//
+//  .field.is-error
+//
+// --------------------------------------------------------
+
+.field.is-error {
+  .field__feedback {
+    display: block;
+  }
+  input {
+    border: 1px solid rgba(218, 35, 0, 0.3);
+  }
+}
+
+
+
+
+//
+//   @field__input--list
+// --------------------------------------------------------
+//
+//  block list containing radio labels
+//
+// --------------------------------------------------------
+
+.field__input--list {
+  display: block;
+  margin: 0;
+  padding: 0;
+  li {
+    display: block;
+    list-style-type: none;
+  }
+}
+
+
+
+
+//
+//   @action
+// ---------------------------------------------------------
+//
+//   Each form has an action section at the bottom to
+//   submit the form
+//
+// ---------------------------------------------------------
+
+.action {
+}
+
+
+
+
+//
+//   TYPES OF FORMS
+//
+//   @form--search
+// ---------------------------------------------------------
+
+.form--search {
+  width: 7.2em;
+  input[type=search] {
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    border-radius: .625rem;
+    padding: .44rem .3125rem .35rem 1.75rem;
+    @include text-xs;
+  }
+}

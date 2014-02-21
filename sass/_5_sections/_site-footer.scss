@@ -1,0 +1,53 @@
+//
+//   @site-footer
+// --------------------------------------------------------
+//  _5_sections/_site-footer.scss
+// --------------------------------------------------------
+//
+//  The site's footer
+//
+//  This is currently set up with the assumption that there
+//  will be 2 navs and a credits area.
+//
+// --------------------------------------------------------
+
+.site-footer {
+
+}
+
+
+
+
+//   @site-footer__primary-nav
+// --------------------------------------------------------
+//  The primary navigation in the footer
+// --------------------------------------------------------
+
+.site-footer__primary-nav {
+  // Add custom styles below...
+
+}
+
+
+
+
+//   @site-footer__secondary-nav
+// --------------------------------------------------------
+//  The secondary navigation in the footer
+// --------------------------------------------------------
+
+.site-footer__secondary-nav {
+
+}
+
+
+
+
+//   @site-credits
+// --------------------------------------------------------
+//  The credits section of the site
+// --------------------------------------------------------
+
+.site-credits {
+  @include text-xs;
+}

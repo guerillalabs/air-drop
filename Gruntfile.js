@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 
         watch: {
             css: {
-                files: 'sass/*.scss',
+                files: 'sass/**/*.scss',
                 tasks: ['sass', 'autoprefixer'],
                 options: {
                     spawn: false,
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
             },
 
             jekyll: {
-                files: ['**/*', '!node_modules/**', '!_site/**', '!sass/**'],
+                files: ['**/*', '!node_modules/**', '!_site/**'],
                 tasks: ['jekyll:dev'],
                 options: {
                     spawn: false,

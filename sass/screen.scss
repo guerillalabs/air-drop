@@ -1,7 +1,222 @@
-h1 {
-    font-weight: bold;
-    transform: translate3d(0,0,0);
-}
+//
+//  SASSpool
+//
+// ---------------------------------------------------------
+//
+//
+//  CREATED by Guerilla Labs
+//  AUTHOR(S) Jacob Fentress (@jfentress)
+//
+//  This project began as a fork of the MANHATTAN framework from the
+//  Crush + Lovely Front End Team. Special thanks go out to Jeff Schram
+//  (@jeffschram) and the entire Crush + Lovely team.
+//
+//
+// ---------------------------------------------------------
+//
+//
+//   ADDITIONAL CREDITS, INSPIRATION & SHOUT OUTS
+//
+//   Jonathan Snook       Nicole Sullivan       Harry Roberts       Chris Coyier
+//   (@snook)                 (@stubbornella)      (@csswizardry)     (@crishcoyier)
+//   smaccs.com             stubbornella.org    csswizardry.com   css-tricks.com
+//                                                                 inuitcss.com         codepen.io
+//
+//   - For some mixins, naming conventions and OOCSS concepts
+//   - Check these guys out and learn from their awesomeness
+//
+//
+//   Nicolas Gallagher
+//   http://nicolasgallagher.com
+//   http://necolas.github.io/normalize.css/
+//
+//   - For the reset
+//
+//
+//   HTML5 Boilerplate (@h5bp)
+//   html5boilerplate.com
+//
+//   - For the print stylesheet
+//
+//
+//   Twitter Bootstrap (@twbootstrap)
+//   twitter.github.com/bootstrap
+//
+//   - For some component ideas, naming conventions and javascript
+//
+//
+// ---------------------------------------------------------
+//
+//
+//   TABLE OF CONTENTS
+//   @toc
+//
+//   - 1 Foundations
+//   - 2 Layout
+//   - 2 Elements
+//   - 4 Components
+//   - 5 Sections
+//
+//   - Shame
+//
+//
+// ---------------------------------------------------------
+//
 
-// @import "screen-dev";
-// @import "grid";
+
+
+
+//  @foundations
+// ---------------------------------------------------------
+//
+//   Set the stage for your site with variables, fonts, mixins, and a reset.
+//
+// ---------------------------------------------------------
+
+  @import "_1_foundations/vars";
+
+  @import "_1_foundations/reset";
+
+  @import "_1_foundations/mixins";
+
+//  @import "_1_foundations/print";
+
+  @import "_1_foundations/fonts";
+
+  @import "_1_foundations/font-sizes";
+
+  @import "_1_foundations/animations";
+
+
+
+
+//  @layout
+// ---------------------------------------------------------
+//
+//  A large portion of CSS is structural layout. You will use
+//  these helpers to create the scaffolding that will support
+//  the elements that make up your site.
+//
+// ---------------------------------------------------------
+
+  @import "_2_layout/clearfix";
+
+  @import "_2_layout/container";
+
+  @import "_2_layout/widths";
+
+  @import "_2_layout/ups";
+
+  @import "_2_layout/grids";
+
+  @import "_2_layout/hide";
+
+
+
+
+//  @elements
+// ---------------------------------------------------------
+//
+//  Global styling of elements.
+//
+//  Take care to not be heavy handed in your styles here.
+//
+// ---------------------------------------------------------
+
+  @import "_3_elements/headings";
+
+  @import "_3_elements/text";
+
+  @import "_3_elements/quotes";
+
+  @import "_3_elements/lists";
+
+  @import "_3_elements/hr";
+
+  @import "_3_elements/links";
+
+  @import "_3_elements/images";
+
+  @import "_3_elements/tables";
+
+  @import "_3_elements/forms";
+
+  @import "_3_elements/nav";
+
+  @import "_3_elements/buttons";
+
+  @import "_3_elements/icons";
+
+  // multimedia (responsive videos, iframes, maps, etc.)
+
+
+
+
+//  @modules
+// ---------------------------------------------------------
+//
+//  Small, reusable objects that are usually combinations
+//  of elements.
+//
+//  If you create a new module, make sure the partial is
+//  in the _4_modules directory, and you import it below.
+//
+// ---------------------------------------------------------
+
+  @import "_4_modules/alerts";
+
+  @import "_4_modules/heroes";
+
+  @import "_4_modules/media";
+
+  @import "_4_modules/modals";
+
+  @import "_4_modules/popover";
+
+  @import "_4_modules/tooltips";
+
+  @import "_4_modules/tabs";
+
+  @import "_4_modules/figures";
+
+  @import "_4_modules/loading";
+
+
+
+
+//  @sections
+// ---------------------------------------------------------
+//
+//  Main areas of the site like the site's header,
+//  main, and footer.  Other areas of the site that deserve
+//  specific styling goes here, too.
+//
+//  If you create a new section, make sure the partial is
+//  in the _5_sections directory, and you import it below.
+//
+// ---------------------------------------------------------
+
+  @import "_5_sections/site-document";
+
+  @import "_5_sections/site-header";
+
+  @import "_5_sections/site-main";
+
+  @import "_5_sections/site-footer";
+
+  @import "_5_sections/page-header";
+
+
+
+
+//  @shame
+// ---------------------------------------------------------
+//
+//  If you're in a bind and need to throw in some code
+//  and don't really know where it should go, put it here
+//  and then later, put it in the right place.
+//
+//  A la @csswizardy _shame.scss
+//  http://csswizardry.com/2013/04/shame-css/
+//
+// ---------------------------------------------------------

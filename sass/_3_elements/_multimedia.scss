@@ -1,0 +1,38 @@
+//
+//   @multimedia
+// ---------------------------------------------------------
+//  _3_elements/_multimedia.scss
+// ---------------------------------------------------------
+//
+//  For video and object responsive sizing.
+//
+// ---------------------------------------------------------
+
+.multimedia {
+    height: 0;
+    margin: 0 auto 1.5em auto;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+.multimedia embed,
+.multimedia object,
+.multimedia video,
+.multimedia iframe {
+    height: 100%;
+    left: 0;
+    margin: 0 !important; // to overwrite margins that may be set in other stylesheets
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+
+
+
+// ratio rules
+// widescreen already accounted for in default rule
+.multimedia--standard {
+  padding-bottom: 75%;
+}

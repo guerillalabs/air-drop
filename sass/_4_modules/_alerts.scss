@@ -1,0 +1,145 @@
+//
+//   @alerts
+// ---------------------------------------------------------
+//  _4_modules/_alerts.scss
+// ---------------------------------------------------------
+//
+//  Alerts are block elements containing text and (potentially) a close
+//  button. They provide important and immediate information and
+//  feedback to the visitor.
+//
+// ---------------------------------------------------------
+//
+//  Example: Error
+//  <div class="alert alert--error">
+//    <a href="#" class="btn--close">&times;</a>
+//    <p>Uh oh - something went wrong</p>
+//  </div>
+//
+//  Example: Warning
+//  <div class="alert alert--warning">
+//    <a href="#" class="btn--close">&times;</a>
+//    <p>Shake it fast, but watch yourself.</p>
+//  </div>
+//
+//  Example: Success
+//  <div class="alert alert--success">
+//    <a href="#" class="btn--close">&times;</a>
+//    <p>The secret to my success is that I learn, 25 hours a day!</p>
+//  </div>
+//
+//  Example: Info
+//  <div class="alert alert--info">
+//    <a href="#" class="btn--close">&times;</a>
+//    <p>Did you ever know that you're my hero?</p>
+//  </div>
+//
+// --------------------------------------------------------
+
+.alert {
+  border-style: solid;
+  border-width: 1px;
+  line-height: 1.25;
+  padding: .5rem 4rem .5rem .5rem;
+  position: relative;
+  &:after {
+    border-left: 1px solid #000;
+    bottom: 0;
+    content: "";
+    height: 100%;
+    position: absolute;
+    right: 2.25em;
+    top: 0;
+    width: 1px;
+  }
+
+  // text
+  p {
+    margin: 0;
+  }
+
+  // Close buttons in alert
+  .btn--close {
+    margin-top: -.75em;
+    opacity: .5;
+    position: absolute;
+    right: .5em;
+    top: 50%;
+    transition: all .3s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+// Error alert
+.alert--error {
+  background: $error-bg;
+  border-color: $error-border;
+  color: $error-txt;
+  // Color of close button
+  .btn--close {
+    color: $error-txt;
+  }
+  // Color of line {
+  &:after {
+    border-color: $error-border;
+  }
+}
+
+
+
+
+// Warning alert
+.alert--warning {
+  background: $warning-bg;
+  border-color: $warning-border;
+  color: $warning-txt;
+  // Color of close button
+  .btn--close {
+    color: $warning-txt;
+  }
+  // Color of line {
+  &:after {
+    border-color: $warning-border;
+  }
+}
+
+
+
+
+// Info alert
+.alert--info {
+  background: $info-bg;
+  border-color: $info-border;
+  color: $info-txt;
+  // Color of close button
+  .btn--close {
+    color: $info-txt;
+  }
+  // Color of line {
+  &:after {
+    border-color: $info-border;
+  }
+}
+
+
+
+
+// Success alert
+.alert--success {
+  background: $success-bg;
+  border-color: $success-border;
+  color: $success-txt;
+  // Color of close button
+  .btn--close {
+    color: $success-txt;
+  }
+  // Color of line {
+  &:after {
+    border-color: $success-border;
+  }
+}

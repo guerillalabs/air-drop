@@ -1,0 +1,89 @@
+/**
+
+  @variables
+---------------------------------------------------------
+  _1_foundation/_vars.scss
+---------------------------------------------------------
+
+  Global variables are defined here
+
+  NOTE: Let's discuss what else makes sense to put here.
+        For instance, should we specify the max width of
+        containers here?  Up for debate.
+
+-----------------------------------------------------  */
+
+
+
+
+
+/* @colors
+--------------------------------------------------------
+  All color variables are defined here.
+
+  We use real color names here.  Although naming something
+  like 'brand' is in fact more generic and reusable, we've
+  found that you end up creating variables like $brand-2,
+  $brand-alt, $brand-complimentary etc.  While coding,
+  it's too easy to forget what those mean.
+
+  If the design changes drastically and the brand changes
+  from, let's say, blue to green, just do a global
+  find/replace - that's what text editors are for.
+------------------------------------------------------ */
+
+$blue: #00ccff;         // Main Brand Blue
+$black: #010101;        // "Black"
+$white: #fff;
+
+$input-placeholder: #b2b2b2;
+
+$error-bg: #ffe6e6;
+$error-txt: #e04646;
+$error-border: #e04646;
+
+$warning-bg: #fcf7d8;
+$warning-txt: #b29804;
+$warning-border: #b29804;
+
+$info-bg: #e8f3ff;
+$info-txt: #537df6;
+$info-border: #537df6;
+
+$success-bg: #dafce1;
+$success-txt: #0ca129;
+$success-border: #0ca129;
+
+
+
+
+
+/* @spacing
+---------------------------------------------------------
+  Create spacing units to reuse throughout your CSS.
+--------------------------------------------------------- */
+
+$spacing-xl: 9rem;
+
+$spacing-l: 7rem;
+
+$spacing-m: 3rem;
+
+$spacing-s: 1rem;
+
+$spacing-xs: .5rem;
+
+
+
+
+/* @grid settings
+---------------------------------------------------------
+  Define the grid padding/gutter width and also the
+  breakpoint at which default grid-units stack.
+--------------------------------------------------------- */
+
+// Define the width of grid padding (applied to left and right)
+$grid-padding: 1em;
+
+// Define breakpoint at which grids stack
+$grid-stack-at-width: 34.375em;   // 550px

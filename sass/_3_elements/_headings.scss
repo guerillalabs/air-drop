@@ -1,0 +1,44 @@
+//
+//   @headings
+// --------------------------------------------------------
+//   _3_elements/_headings.scss
+// --------------------------------------------------------
+//
+//  We set any base styles for any headings that have
+//  no classnames.
+//
+//  Note: Often, we'll use bold fonts, and if a bold font
+//  has font-weight: bold it looks terrible.  In
+//  this case, use font-weight: normal;
+//
+// --------------------------------------------------------
+
+h1 {
+  font-weight: normal;
+  @include h-xxl;
+}
+
+h2 {
+  font-weight: normal;
+  @include h-xl;
+}
+
+h3 {
+  font-weight: normal;
+  @include h-l;
+}
+
+h4 {
+  font-weight: normal;
+  @include h-m;
+}
+
+h5 {
+  font-weight: normal;
+  @include h-s;
+}
+
+h6 {
+  font-weight: normal;
+  @include h-xs;
+}

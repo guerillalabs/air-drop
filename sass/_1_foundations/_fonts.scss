@@ -1,0 +1,81 @@
+/**
+
+   @fonts
+--------------------------------------------------------
+  _1_foundations/_fonts.scss
+--------------------------------------------------------
+
+  Define the fonts used in this app and declare extend
+  classes to be used in your CSS.
+
+  If you are using a webfont, see the _1_foundations/_mixins.scss
+  file for deets on the font embed mixin that is used to
+  embed webfonts.
+
+  for example, to create a font-family named "interstate-light"
+  using a font at /fonts/interstate_light-webfont.woff (and other extensions)
+
+  @include embed-font("interstate-light", "/fonts/interstate_light-webfont");
+
+
+-------------------------------------------------------- */
+
+
+
+
+
+/* @sans
+--------------------------------------------------------
+  use @extend %sans for this font
+-------------------------------------------------------- */
+
+@include embed-font("interstate-light", "/fonts/interstate_light-webfont");
+
+@mixin sans {
+  font-family: "interstate-light", helvetica, sans-serif;
+  font-weight: normal;
+}
+
+
+
+
+
+
+/* @sans-bold
+--------------------------------------------------------
+  use @extend %sans-bold for this font
+-------------------------------------------------------- */
+
+@mixin sans-bold {
+  font-family: helvetica, sans-serif;
+  font-weight: bold;
+}
+
+
+
+
+
+
+/* @serif
+--------------------------------------------------------
+  use @extend %serif for this font
+-------------------------------------------------------- */
+
+@mixin serif {
+  font-family: georgia, times;
+  font-weight: normal;
+}
+
+
+
+
+
+/* @serif-bold
+--------------------------------------------------------
+  use @extend %serif-bold for this font
+-------------------------------------------------------- */
+
+@mixin serif-bold {
+  font-family: georgia, times;
+  font-weight: bold;
+}

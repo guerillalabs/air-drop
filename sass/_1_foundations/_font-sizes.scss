@@ -1,0 +1,86 @@
+/**
+
+  @font-sizes
+--------------------------------------------------------
+
+  Reusable font-size extend classes define your global
+  typography
+
+  Often, there are only a few different font-sizes used
+  in a design.  To help keep things consistent, you can
+  define these sizes here as extend classes and then
+  use them in your CSS.
+
+  Note: Feel free to add/remove/edit font-sizes as you
+        see fit.
+
+-----------------------------------------------------  */
+
+
+
+
+
+/* @heading-sizes
+--------------------------------------------------------
+  Reusable extend classes are defined to be used
+  throughout the CSS
+  These classes use 'small medium large' naming
+  Sizes range from @mixin h-xs to @mixin h-xxl.
+------------------------------------------------------ */
+
+@mixin h-xxl {
+  font-size: 2.25em;                       // 36px
+}
+
+@mixin h-xl {
+  font-size: 1.875em;                       // 30px
+}
+
+@mixin h-l {
+  font-size: 1.5em;                         // 24px
+}
+
+@mixin h-m {
+  font-size: 1.25em;                     // 20px
+}
+
+@mixin h-s {
+  font-size: 1em;                       // 16px
+}
+
+@mixin h-xs {
+  font-size: .875em;                         // 14px
+}
+
+
+
+
+
+/* @text-sizes
+--------------------------------------------------------
+  Reusable extend classes for text
+-------------------------------------------------------- */
+
+@mixin text-xl {
+  font-size: 2em;                         // 32px
+}
+
+@mixin text-xl {
+  font-size: 1.5em;                       // 24px
+}
+
+@mixin text-l {
+  font-size: 1.125em;                     // 18px
+}
+
+@mixin text-m {
+  font-size: 1em;                         // 16px
+}
+
+@mixin text-s {
+  font-size: .875em;                      // 14px
+}
+
+@mixin text-xs {
+  font-size: .75em;                       // 12px
+}
