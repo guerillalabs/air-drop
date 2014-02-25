@@ -46,6 +46,54 @@ Each URL is prepended with `$base-url` variable. Since URLs in CSS are part of s
 
 The `$base-url` variable is set in the `sass/_1_foundations/_vars.scss` file. When you're ready to go to production, the variable can be set to `/` to change over to absolute URLs everywhere.
 
+## Naming Conventions
+
+How CSS classes are named have become a matter of debate over recent years. For consistency, we're documenting our naming convention here.
+
+We use the BEM (block, element, modifier) naming convention as honed by [Harry Roberts at CSS Wizardry](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
+
+### Block
+
+This is a "module" of the page. Let's go with "nav".
+
+``` html
+<ul class="nav">
+    ...
+</ul>
+```
+
+### Element
+
+A distinct element within the block. We try to not rely on HTML elements for this. HTML elements are best for hierarchy, while classes are for styling. A heading in a sidebar may need to change from an h2 to h3 on different pages to keep the document outline in tact, but they class can stay the same to keep the styling correct in each situation.
+
+Two underscores indicate the element portion of the class.
+
+Let's add some links to our navigation.
+
+``` html
+<ul class="nav">
+    <li class="nav__item"><a href="#">Nav Item</a></li>
+    <li class="nav__item"><a href="#">Nav Item</a></li>
+</ul>
+```
+
+### Modifier
+
+A modifier changes a block or element that has already been defined. Really popular modifiers are for buttons, where you'll end up with classes like `.btn--large`, `btn--small`, `btn--disabled`, and others.
+
+Two hyphens indicate the modifier portion of the class.
+
+Let's add a modifier to our navigation.
+
+``` html
+<ul class="nav nav--inline">
+    <li class="nav__item"><a href="#">Nav Item</a></li>
+    <li class="nav__item"><a href="#">Nav Item</a></li>
+</ul>
+```
+
+Note that the new class is added in addition to the base "block" class.
+
 ## Adding JavaScript Libraries
 
 To add a new JavaScript library – either home-grown or third-party – you'll want to edit `Gruntfile.js`. In the concat task, you'll find something like this:
