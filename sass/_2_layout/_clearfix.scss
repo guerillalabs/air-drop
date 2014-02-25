@@ -6,15 +6,15 @@
 //
 //  Use @extend %clearfix in your CSS
 //
+//  This version of the clearfix from:
+//  http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+//
 // ---------------------------------------------------------
 
 %clearfix {
-  &:before,
   &:after {
     content: " ";
     display: table;
-  }
-  &:after {
     clear: both;
   }
 }
