@@ -12,6 +12,25 @@ module.exports = function(grunt) {
           }
         },
 
+        concat: {
+            dist: {
+                files: {
+                    'js/global.js' : [
+                    'js/scripts/logging.js'
+                    ]
+                }
+            },
+
+            ie: {
+                files: {
+                    'js/ie.js' : [
+                    'vendor/html5shiv/dist/html5shiv.js',
+                    'vendor/selectivizr/selectivizr.js'
+                    ]
+                }
+            }
+        },
+
         concurrent: {
             target: {
                 tasks: ['jekyll:server', 'watch'],
@@ -47,10 +66,31 @@ module.exports = function(grunt) {
             }
         },
 
+        uglify: {
+            dist: {
+                files: [{
+                expand: true,
+                cwd: 'js',
+                src: ['*.js', '!*.min.js'],
+                dest: 'js',
+                ext: '.min.js'
+                }]
+            }
+        },
+
         watch: {
             css: {
                 files: 'sass/**/*.scss',
                 tasks: ['sass', 'autoprefixer'],
+                options: {
+                    spawn: false,
+                    interrupt: true
+                }
+            },
+
+            js: {
+                files: 'js/**/*.js',
+                tasks: ['concat:dist', 'uglify'],
                 options: {
                     spawn: false,
                     interrupt: true
@@ -68,7 +108,7 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['sass', 'autoprefixer', 'concurrent:target']);
+    grunt.registerTask('default', ['sass', 'autoprefixer', 'concat', 'uglify', 'concurrent:target']);
 
     // plugin tasks
     grunt.loadNpmTasks('grunt-contrib-sass');
@@ -76,4 +116,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-jekyll');
     grunt.loadNpmTasks('grunt-concurrent');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 }
