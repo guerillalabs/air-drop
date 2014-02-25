@@ -12,7 +12,7 @@ destination: ./_site
 plugins:     ./_plugins
 layouts:     ./_layouts
 include:     ['.htaccess']
-exclude:     [ node_modules, Gruntfile.js, package.json, bower.json, README.md ]
+exclude:     [ node_modules, Gruntfile.js, package.json, bower.json, README.md, TODO.md ]
 
 future:      true
 show_drafts: nil
