@@ -10,6 +10,8 @@ Look, we realize you can't use Jekyll for a lot of client projects – us either
 
 ## Requirements
 
+These items must be installed on your computer:
+
 * [Node.js](http://nodejs.org)
 * [Bower](http://bower.io)
 * [SASS](http://sass-lang.com)
@@ -43,3 +45,21 @@ The `{{ relative }}` variable is set at the top of the `_includes/head.html` fil
 Each URL is prepended with `$base-url` variable. Since URLs in CSS are part of stings, you'll want to use the SASS [interpolation syntax](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#interpolation_). A asset link will look like `@include font-face('BLOKKRegular', '#{$base-url}type/BLOKKRegular/webfonts/BLOKKRegular');`.
 
 The `$base-url` variable is set in the `sass/_1_foundations/_vars.scss` file. When you're ready to go to production, the variable can be set to `/` to change over to absolute URLs everywhere.
+
+## Adding JavaScript Libraries
+
+To add a new JavaScript library – either home-grown or third-party – you'll want to edit `Gruntfile.js`. In the concat task, you'll find something like this:
+
+``` javascript
+concat: {
+    dist: {
+        files: {
+            'js/global.js' : [
+            'js/scripts/logging.js'
+            ]
+        }
+    },
+    ...
+```
+
+The first line after the `files: {` line is the file we're writing to. Add your new libraries to the list after `'js/scripts/logging.js'` (don't forget your commas). Home grown libraries should go in the `js/scripts` directory (so they aren't compressed with Uglify) and third-party libraries should end up in the `vendor` directory because they should be managed with Bower. This is a great way to bring in components from libraries like Bootstrap.
