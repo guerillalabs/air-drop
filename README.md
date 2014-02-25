@@ -25,3 +25,21 @@ When you first download the repo, you will want to open the project directory in
 Next, run `bower install`. This will download jQuery and other third-party libraries used in this project.
 
 Running `grunt` will start the Jekyll server and the task that watches for changes to your files. The server is accessible from `localhost:4000` (or `0.0.0.0:4000` depending on which URL style you prefer). To kill the server, type `ctrl` + `c` in the terminal.
+
+## URLs
+
+A big part of the concept for Air-Drop is to produce a static HTML site that can be sent anywhere. A traditional problem with that is how URLs are structured. I've always preferred absolute URLs (and you should, too), but they're only possible when your site is sitting at the root of a domain on a server – which isn't always the case.
+
+So, all URLs used in Air-Drop – either within Jekyll or SASS files – have a special format they should follow.
+
+### URLs in Jekyll
+
+Each URL is prepended with the `{{ relative }}` variable. So, a link to a CSS file will look like `<link rel='stylesheet' href='{{ relative }}css/screen.css'>`.
+
+The `{{ relative }}` variable is set at the top of the `_includes/head.html` file. When you're ready to go to production, the variable can be set to `/` to change over to absolute URLs everywhere.
+
+### URLs in SASS
+
+Each URL is prepended with `$base-url` variable. Since URLs in CSS are part of stings, you'll want to use the SASS [interpolation syntax](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#interpolation_). A asset link will look like `@include font-face('BLOKKRegular', '#{$base-url}type/BLOKKRegular/webfonts/BLOKKRegular');`.
+
+The `$base-url` variable is set in the `sass/_1_foundations/_vars.scss` file. When you're ready to go to production, the variable can be set to `/` to change over to absolute URLs everywhere.
