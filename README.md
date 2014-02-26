@@ -36,15 +36,26 @@ So, all URLs used in Air-Drop – either within Jekyll or SASS files – have a 
 
 ### URLs in Jekyll
 
-Each URL is prepended with the `{{ relative }}` variable. So, a link to a CSS file will look like `<link rel='stylesheet' href='{{ relative }}css/screen.css'>`.
+Each URL is prepended with the `{{ baseurl }}` variable. So, a link to a CSS file will look like `<link rel='stylesheet' href='{{ baseurl }}css/screen.css'>`.
 
-The `{{ relative }}` variable is set at the top of the `_includes/head.html` file. When you're ready to go to production, the variable can be set to `/` to change over to absolute URLs everywhere.
+The `{{ baseurl }}` variable is set in the top of the `_includes/head.html` file. If you have multiple head files used throughout the site, include these variables at the top of each:
+
+``` liquid
+{% capture lvl %}{{ page.url | append:'index.html' | split:'/' | size }}{% endcapture %}
+{% capture baseurl %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
+```
+
+You'll notice the same variables set at the top of each post, just beneath the YAML.
+
+When you're ready to go to production, two things need to happen to change to absolute URLs. First, do a find and replace across the entire project to get rid of the above two variable lines. Next, do a find and replace across the entire project to replace `{{ baseurl }}` with `{{ site.baseurl }}`.
+
+This concept is based off of this [this stackoverflow question](http://stackoverflow.com/questions/7985081/how-to-deploy-a-jekyll-site-locally-with-css-js-and-background-images-included).
 
 ### URLs in SASS
 
-Each URL is prepended with `$base-url` variable. Since URLs in CSS are part of stings, you'll want to use the SASS [interpolation syntax](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#interpolation_). A asset link will look like `@include font-face('BLOKKRegular', '#{$base-url}type/BLOKKRegular/webfonts/BLOKKRegular');`.
+Each URL is prepended with `$baseurl` variable. Since URLs in CSS are part of stings, you'll want to use the SASS [interpolation syntax](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#interpolation_). A asset link will look like `@include font-face('BLOKKRegular', '#{$baseurl}type/BLOKKRegular/webfonts/BLOKKRegular');`.
 
-The `$base-url` variable is set in the `sass/_1_foundations/_vars.scss` file. When you're ready to go to production, the variable can be set to `/` to change over to absolute URLs everywhere.
+The `$baseurl` variable is set in the `sass/_1_foundations/_vars.scss` file. When you're ready to go to production, the variable can be set to `/` to change over to absolute URLs everywhere.
 
 ## Naming Conventions
 

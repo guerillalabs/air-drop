@@ -4,7 +4,7 @@
 <!--[if gt IE 9]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
     {% capture lvl %}{{ page.url | append:'index.html' | split:'/' | size }}{% endcapture %}
-    {% capture relative %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
+    {% capture baseurl %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
     <!-- META -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,17 +18,17 @@
     <!-- CSS -->
     <!-- For old IE -->
     <!--[if (lte IE 8)&!(IEMobile)]>
-        <link rel='stylesheet' href='{{ relative }}css/lte-ie8.css'>
+        <link rel='stylesheet' href='{{ baseurl }}css/lte-ie8.css'>
         {% if page.css %}
-            <link rel='stylesheet' href='{{ relative }}css/lte-ie8-{{page.css}}'>
+            <link rel='stylesheet' href='{{ baseurl }}css/lte-ie8-{{page.css}}'>
         {% endif %}
     <![endif]-->
 
     <!-- For all other browsers -->
     <!--[if gt IE 8]><!-->
-        <link rel='stylesheet' href='{{ relative }}css/screen.css'>
+        <link rel='stylesheet' href='{{ baseurl }}css/screen.css'>
         {% if page.css %}
-            <link rel='stylesheet' href='{{ relative }}css/{{ page.css }}'>
+            <link rel='stylesheet' href='{{ baseurl }}css/{{ page.css }}'>
         {% endif %}
     <!--<![endif]-->
 
@@ -43,7 +43,7 @@
 
     <!-- HTML5 Shiv for old IE -->
     <!--[if (lte IE 8)&!(IEMobile)]>
-    <script type="text/javascript" src="{{ relative }}js/ie.js"></script>
+    <script type="text/javascript" src="{{ baseurl }}js/ie.js"></script>
     <![endif]-->
 
     <!-- Fonts -->

@@ -15,7 +15,7 @@
 // =====================================================================
 
 // set the base url of the site (helpful for switching between server environments)
-$base-url                   : '/' !default; // typically '/' or '../'
+$baseurl                   : '/' !default; // typically '/' or '../'
 
 
 
@@ -32,8 +32,8 @@ $base-line-height           : 18 * 1.5;
 
 
 // typefaces
-@include font-face('BLOKKRegular', '#{$base-url}type/BLOKKRegular/webfonts/BLOKKRegular');
-//@include font-face('BLOKKNeue-Regular', '#{$base-url}type/BLOKKNeue-Regular/webfonts/BLOKKNeue-Regular');
+@include font-face('BLOKKRegular', '#{$baseurl}type/BLOKKRegular/webfonts/BLOKKRegular');
+//@include font-face('BLOKKNeue-Regular', '#{$baseurl}type/BLOKKNeue-Regular/webfonts/BLOKKNeue-Regular');
 
 $base-font-family			: BLOKKRegular, $helvetica;
 

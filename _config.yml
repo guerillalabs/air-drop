@@ -21,5 +21,5 @@ pygments:    false
 
 relative_permalinks: false
 
-permalink:   /:categories/:title/
+permalink:   /:title/
 paginate_path: 'page:num'
