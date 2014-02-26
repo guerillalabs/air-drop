@@ -18,6 +18,14 @@
 //  @include embed-font("interstate-light", "/fonts/interstate_light-webfont");
 //  @include embed-font('BLOKKRegular', '#{$baseurl}fonts/BLOKKRegular/webfonts/BLOKKRegular');
 //
+//  Some icons need extra styles to display correctly – with ligatures.
+//  Use the icon-font mixin to generate these styles.
+//
+//  Example:
+//  %ss-social-circle {
+//    @include icon-font("SS Social Circle");
+//  }
+//
 // --------------------------------------------------------
 
 
