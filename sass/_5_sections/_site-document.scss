@@ -38,7 +38,7 @@ html {
 body {
   background: $white;
   color: $black;
-  @include sans;
+  @extend %sans;
   @include text-m;
   -webkit-font-smoothing: antialiased;
   line-height: 1.111;

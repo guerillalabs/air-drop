@@ -39,7 +39,7 @@ p {
 
 b,
 strong {
-  @include sans-bold;  // If using a bold web-font, you specify the font, not the weight
+  @extend %sans-bold;  // If using a bold web-font, you specify the font, not the weight
 }
 
 i,

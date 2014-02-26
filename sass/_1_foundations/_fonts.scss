@@ -27,11 +27,11 @@
 //   @sans
 // --------------------------------------------------------
 //
-//  use @include sans for this font
+//  use @extend %serifsans for this font
 //
 // --------------------------------------------------------
 
-@mixin sans {
+%sans {
   font-family: helvetica, sans-serif;
   font-weight: normal;
 }
@@ -43,11 +43,11 @@
 //   @sans-bold
 // --------------------------------------------------------
 //
-//  use @include sans-bold for this font
+//  use @extend %sans-bold for this font
 //
 // --------------------------------------------------------
 
-@mixin sans-bold {
+%sans-bold {
   font-family: helvetica, sans-serif;
   font-weight: bold;
 }
@@ -59,11 +59,11 @@
 //   @serif
 // --------------------------------------------------------
 //
-//  use @include serif for this font
+//  use @extend %serif for this font
 //
 // --------------------------------------------------------
 
-@mixin serif {
+%serif {
   font-family: georgia, times;
   font-weight: normal;
 }
@@ -75,11 +75,11 @@
 //   @serif-bold
 // --------------------------------------------------------
 //
-//  use @include serif-bold for this font
+//  use @extend %serif-bold for this font
 //
 // --------------------------------------------------------
 
-@mixin serif-bold {
+%serif-bold {
   font-family: georgia, times;
   font-weight: bold;
 }
