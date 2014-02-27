@@ -4,40 +4,108 @@
 //  _1_foundations/_mixins/_media-queries.scss
 // --------------------------------------------------------
 //
-//  Use this mixin to have media-queries that will degrade gracefully for
-//  older versions of IE that do not support media queries.
+//  Use this mixin to have media-queries that will degrade
+//  gracefully for older versions of IE that do not support
+//  media queries.
 //
 //  inspired by http://alwaystwisted.com/post.php?s=2013-04-01-my-media-query-mixin
 //
+//  By default, this mixin outputs media queries just as
+//  Sass would. Set the $no-queries variable at the top of
+//  your style sheet to override this.
+//
+//  For CSS files that should get both media query
+//  and fall-back styles together, use:
+//
+//  $no-queries: true;
+//
+//  For "Old IE" style sheets that shouldn't get the media
+//  queries (only the fall-back styles), use:
+//
+//  $no-queries: only;
+//
+//  Several arguments can be passed to alter the way the
+//  mixin behaves.
+//
+//  Base Example:
+//
+//  .test {
+//      background: #fff;
+//      @include media('screen and (min-width: 400px) and (max-width: 600px)') {
+//          color: #000;
+//      }
+//  }
+//
+//  The entire query part of the media query is passed as
+//  an argument. You can use variables for your dimensions
+//  by using interpolation – like #{$bp-small}
+//
+//  Since Sass makes it difficult, we need to pass an
+//  argument if the media query is standing alone – only
+//  wrapping other styles, but not within a selector like
+//  the example above shows.
+//
+//  @include media('(min-width: 400px) and (max-width: 600px)', $wrap: true) {
+//      .test {
+//          color: #f00;
+//      }
+//  }
+//
+//  Note the "wrap" argument that indicated this is wrapping
+//  other elements. If you get an error when compiling, this
+//  is the likely culprit.
+//
+//  You can specify when styles in media queries shouldn't
+//  be sent to "fallback" browsers.
+//
+//  .test {
+//      background: #fff;
+//      @include media('screen and (min-width: 400px) and (max-width: 600px)', $no-query-fallback: false) {
+//          color: #000;
+//      }
+//  }
+//
+//  Note the "no-query-fallback" argument.
+//
+//  You can also specify what selector should be prepended
+//  to fallback styles (when both are included in one stylesheet).
+//  We use '.lte-ie8' as the default.
+//
+//  @include media('(min-width: 400px) and (max-width: 600px)', $selector: '.no-mq') {
+//      .test {
+//          color: #f00;
+//      }
+//  }
+//
 // --------------------------------------------------------
 
-// change this to 'true' for css files that should get both media query and class styles together, and 'only' for those that should only receive the class based styles
-$lte-ie8: false !default;
+$no-queries: false !default;
 
 
 
 
-@mixin mq($points, $for-ie8: true, $stand-alone: false, $directions: min, $dimensions: width) {
+@mixin media($query, $no-query-fallback: true, $wrap: false, $selector: '.lte-ie8') {
 
-    @if $for-ie8 == true and $lte-ie8 != false {
-        @if not $stand-alone {
-            .lte-ie8 & {
-                @content;
-            }
-        } @else {
-            .lte-ie8 {
-                @content;
-            }
+    @if $no-queries != 'only'  {
+        @media #{$query} {
+            @content;
         }
     }
 
-    @if $lte-ie8 != 'only'  {
-        $query: '';
-        @for $i from 1 through length($points) {
-            $query: $query + ' and (#{nth($directions, $i)}-#{nth($dimensions, $i)}: #{nth($points, $i)})';
+    @if $no-query-fallback == true and $no-queries == true {
+        @if $wrap == false {
+            #{$selector} & {
+                @content;
+            }
+        } @else {
+            #{$selector} {
+                @content;
+            }
         }
-        @media screen #{$query} {
-            @content;
-        }
+
+    }
+
+    @if $no-query-fallback == true and $no-queries == 'only' {
+        @content;
     }
 }
