@@ -105,6 +105,10 @@ Let's add a modifier to our navigation.
 
 Note that the new class is added in addition to the base "block" class.
 
+## Grids
+
+Air-Drop includes the excellent csswizardry-grids by Harry Roberts. Head over to [the github repo](https://github.com/csswizardry/csswizardry-grids/) for full instructions on usage.
+
 ## Adding JavaScript Libraries
 
 To add a new JavaScript library – either home-grown or third-party – you'll want to edit `Gruntfile.js`. In the concat task, you'll find something like this:

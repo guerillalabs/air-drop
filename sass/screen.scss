@@ -103,11 +103,9 @@
 
   @import "_2_layout/container";
 
-  @import "_2_layout/widths";
+  @import "../vendor/csswizardry-grids/csswizardry-grids";
 
   @import "_2_layout/ups";
-
-  @import "_2_layout/grids";
 
   @import "_2_layout/hide";
 
@@ -147,7 +145,7 @@
 
   @import "_3_elements/icons";
 
-  // multimedia (responsive videos, iframes, maps, etc.)
+  @import "_3_elements/multimedia";
 
 
 
