@@ -14,7 +14,7 @@ These items must be installed on your computer:
 
 * [Node.js](http://nodejs.org)
 * [Bower](http://bower.io)
-* [SASS](http://sass-lang.com)
+* [Sass](http://sass-lang.com)
 * [Jekyll](http://jekyllrb.com)
 * [grunt-cli](http://gruntjs.com/getting-started#installing-the-cli)
 
@@ -32,7 +32,7 @@ Running `grunt` will start the Jekyll server and the task that watches for chang
 
 A big part of the concept for Air-Drop is to produce a static HTML site that can be sent anywhere. A traditional problem with that is how URLs are structured. I've always preferred absolute URLs (and you should, too), but they're only possible when your site is sitting at the root of a domain on a server – which isn't always the case.
 
-So, all URLs used in Air-Drop – either within Jekyll or SASS files – have a special format they should follow.
+So, all URLs used in Air-Drop – either within Jekyll or Sass files – have a special format they should follow.
 
 ### URLs in Jekyll
 
@@ -51,9 +51,9 @@ When you're ready to go to production, two things need to happen to change to ab
 
 This concept is based off of this [this stackoverflow question](http://stackoverflow.com/questions/7985081/how-to-deploy-a-jekyll-site-locally-with-css-js-and-background-images-included).
 
-### URLs in SASS
+### URLs in Sass
 
-Each URL is prepended with `$baseurl` variable. Since URLs in CSS are part of stings, you'll want to use the SASS [interpolation syntax](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#interpolation_). A asset link will look like `@include font-face('BLOKKRegular', '#{$baseurl}type/BLOKKRegular/webfonts/BLOKKRegular');`.
+Each URL is prepended with `$baseurl` variable. Since URLs in CSS are part of stings, you'll want to use the Sass [interpolation syntax](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#interpolation_). A asset link will look like `@include font-face('BLOKKRegular', '#{$baseurl}type/BLOKKRegular/webfonts/BLOKKRegular');`.
 
 The `$baseurl` variable is set in the `sass/_1_foundations/_vars.scss` file. When you're ready to go to production, the variable can be set to `/` to change over to absolute URLs everywhere.
 
