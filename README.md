@@ -105,9 +105,32 @@ Let's add a modifier to our navigation.
 
 Note that the new class is added in addition to the base "block" class.
 
+## Relative Sizing Units
+
+Because Air-Drop still supports IE8, we need a good way to deal with rem units in CSS. There are helper functions to calculate rems, ems and percentages. You can find them all in `sass/_1_foundations/_mixins/_units.scss`.
+
+The philosophy behind our use of ems and rems follows closely with the thoughts of [Jeremy Church](http://j.eremy.net/confused-about-rem-and-em/). tl;dr – use ems to size text, and most other things; use rems when you need to ensure horizontal spacing (like gutters) stays consistent across contexts.
+
+The rem() function should be used exclusively when using rem units, so those values may be converted to pixels for old IE stylesheets. The em() function is available for your convenience to avoid having to do calculations, but it isn't required.
+
+To make an old IE stylesheet, set `$rems: false;` at the top of the file.
+
+**Important note:** if you use ems for media queries (and you should), make sure that they are always based off of the default browser text size and not the `$base-font-size`. So, something like `@media (min-width: em(480, 16)) {` should always be used.
+
 ## Grids
 
 Air-Drop includes the excellent csswizardry-grids by Harry Roberts. Head over to [the github repo](https://github.com/csswizardry/csswizardry-grids/) for full instructions on usage.
+
+All of the variables that control the grid are in `sass/_1_foundations/_vars.scss`.
+
+Be sure to comment out the white space between the individual grid items. Like so:
+
+``` html
+...
+</div><!--
+
+--><div class="grid__item" ...
+```
 
 ## Adding JavaScript Libraries
 

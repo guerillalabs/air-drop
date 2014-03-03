@@ -8,7 +8,9 @@
 //
 // --------------------------------------------------------
 
-  @import "_mixins/ratios";
+  @import "_mixins/units";
+
+  @import "_mixins/modular-scale";
 
   @import "_mixins/timing-functions";
 
@@ -16,8 +18,4 @@
 
   @import "_mixins/embed-font";
 
-  @import "_mixins/units";
-
   @import "_mixins/media-queries";
-
-  @import "_mixins/grid";

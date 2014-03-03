@@ -133,8 +133,8 @@ input[type="radio"] {
   -webkit-appearance:none;
   border: 2px solid white;
   border-radius: 50%;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.5em;
+  width: 1.5em;
   &:checked {
     background: white;
   }
@@ -204,7 +204,7 @@ input:focus {
   display: block;
   .radio__text {
     overflow: hidden;
-    margin-left: 2rem;
+    margin-left: rem(32);
   }
   input {
     position: absolute;
@@ -320,8 +320,8 @@ input:focus {
     background-size: auto 60%;
     background-repeat: no-repeat;
     background-position: 5% 50%;
-    border-radius: .625rem;
-    padding: .44rem .3125rem .35rem 1.75rem;
+    border-radius: .625em;
+    padding: .44em .3125em .35em 1.75em;
     @include text-xs;
   }
 }

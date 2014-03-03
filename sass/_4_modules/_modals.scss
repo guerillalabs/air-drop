@@ -12,33 +12,33 @@
   position: fixed;
   z-index: 200; // modals live in level 2
   top: 0; bottom: 0; left: 0; right: 0;
-  border: 1rem solid black;
+  border: 1em solid black;
   background: white;
   color: black;
 }
 
 // modal header
 .modal__header {
-  height: 3rem;
-  padding: 1rem;
+  height: 3em;
+  padding: 1em;
   p {
-    font-size: .8rem;
+    font-size: .8em;
     line-height: 1.2;
   }
 }
 
 .modal__close {
   position: absolute;
-  right: 1.4rem;
-  top: 1rem;
+  right: 1.4em;
+  top: 1em;
 }
 
 // modal body
 .modal__body {
-  bottom: 1rem;
+  bottom: 1em;
   left: 0;
   overflow: auto;
   position: absolute;
   right: 0;
-  top: 3rem; // same as header height
+  top: 3em; // same as header height
 }

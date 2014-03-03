@@ -21,6 +21,6 @@
 .container {
   @extend %clearfix;
   margin: 0 auto;
-  max-width: 68.1rem;    // restricts width
-  padding: 0 2rem;          // adds padding on viewports less than the max-width
+  max-width: rem(1096); // restricts width
+  padding: 0 rem(32);   // adds padding on viewports less than the max-width
 }
