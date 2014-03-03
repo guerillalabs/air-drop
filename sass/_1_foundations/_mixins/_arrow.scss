@@ -1,7 +1,70 @@
 //
-//   @arrow
+//   @triangle
 // --------------------------------------------------------
 //  _1_foundations/_mixins/_arrow.scss
+// --------------------------------------------------------
+//
+//  A mixin to create CSS arrows.
+//
+//  The arguments are:
+//
+//    size
+//    color
+//    direction: up / right / down / left / up-right / up-left / down-right / down-left
+//
+// --------------------------------------------------------
+
+@mixin triangle ($size, $color, $direction) {
+  height: 0;
+  width: 0;
+
+  @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+    border-color: transparent;
+    border-style: solid;
+    border-width: $size;
+
+    @if $direction == up {
+      border-bottom-color: $color;
+
+    } @else if $direction == right {
+      border-left-color:   $color;
+
+    } @else if $direction == down {
+      border-top-color:    $color;
+
+    } @else if $direction == left {
+      border-right-color:  $color;
+    }
+  }
+
+  @else if ($direction == up-right) or ($direction == up-left) {
+    border-top: $size solid $color;
+
+    @if $direction == up-right {
+      border-left:  $size solid transparent;
+
+    } @else if $direction == up-left {
+      border-right: $size solid transparent;
+    }
+  }
+
+  @else if ($direction == down-right) or ($direction == down-left) {
+    border-bottom: $size solid $color;
+
+    @if $direction == down-right {
+      border-left:  $size solid transparent;
+
+    } @else if $direction == down-left {
+      border-right: $size solid transparent;
+    }
+  }
+}
+
+
+
+
+//
+//   @arrow
 // --------------------------------------------------------
 //
 //  A mixin to create an arrow relative to a parent.  Note
@@ -10,7 +73,7 @@
 //
 //  The arguments are:
 //
-//    Position: top / right / bottom / left
+//    Position: up / right / down / left
 //    Background Color
 //    Size
 //    Border Color
@@ -22,19 +85,15 @@
 
   &:before,
   &:after {
-    border: solid transparent;
-    border-width: $size;
+    @include triangle($size, $bg-color, $position);
     content: " ";
-    height: 0;
     pointer-events: none;
     position: absolute;
-    width: 0;
     z-index: 100;
 
     // If position is top
-    @if $position == "top" {
+    @if $position == "up" {
       bottom: 100%;
-      border-bottom-color: $bg-color;
       left: 50%;
       margin-left: -$size;
     }
@@ -42,15 +101,13 @@
     // if position is right
     @if $position == "right" {
       left: 100%;
-      border-left-color: $bg-color;
       top: 50%;
       margin-top: -$size;
     }
 
     // If position is bottom
-    @if $position == "bottom" {
+    @if $position == "down" {
       top: 100%;
-      border-top-color: $bg-color;
       left: 50%;
       margin-left: -$size;
     }
@@ -58,7 +115,6 @@
     // If position is left
     @if $position == "left" {
       right: 100%;
-      border-right-color: $bg-color;
       top: 50%;
       margin-top: -$size;
     }
@@ -68,30 +124,26 @@
   $border-size: $size + ($border-size*1.5);
 
   &:after {
-    border-width: $border-size;
+    @include triangle($border-size, $border-color, $position);
     z-index: 90;
 
     // If position is top
-    @if $position == "top" {
-      border-bottom-color: $border-color;
+    @if $position == "up" {
       margin-left: -$border-size;;
     }
 
     // if position is right
     @if $position == "right" {
-      border-left-color: $border-color;
       margin-top: -$border-size;
     }
 
     // If position is bottom
-    @if $position == "bottom" {
-      border-top-color: $border-color;
+    @if $position == "down" {
       margin-left: -$border-size;
     }
 
     // If position is left
     @if $position == "left" {
-      border-right-color: $border-color;
       margin-top: -$border-size;
     }
   }

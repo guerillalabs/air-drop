@@ -28,6 +28,13 @@
 //
 // --------------------------------------------------------
 
+$georgia: Georgia, Cambria, "Times New Roman", Times, serif;
+$helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$lucida-grande: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+$monospace: "Bitstream Vera Sans Mono", Consolas, Monaco, 'Andale Mono', monospace;
+$palatino: Palatino, "Times New Roman", Times, serif;
+$verdana: Verdana, Geneva, sans-serif;
+
 
 
 
@@ -41,7 +48,7 @@
 
 .sans,
 %sans {
-  font-family: helvetica, sans-serif;
+  font-family: $helvetica;
   font-weight: normal;
 }
 
@@ -58,7 +65,7 @@
 
 .sans-bold,
 %sans-bold {
-  font-family: helvetica, sans-serif;
+  font-family: $helvetica;
   font-weight: bold;
 }
 
@@ -75,7 +82,7 @@
 
 .serif,
 %serif {
-  font-family: georgia, times;
+  font-family: $georgia;
   font-weight: normal;
 }
 
@@ -92,6 +99,6 @@
 
 .serif-bold,
 %serif-bold {
-  font-family: georgia, times;
+  font-family: $georgia;
   font-weight: bold;
 }
