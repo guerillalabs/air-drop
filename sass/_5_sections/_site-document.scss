@@ -20,9 +20,6 @@
 
 html {
   background: $black;
-  font-size: 100%; // HTML must be at 100% font-size for em-based media queries
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
 }
 
 
@@ -36,10 +33,10 @@ html {
 // --------------------------------------------------------
 
 body {
-  background: $white;
-  color: $black;
+  background: $body-color;
+  color: $text-color;
   @extend %sans;
-  @include text-m;
+  font-size: em($base-font-size, 16);
   -webkit-font-smoothing: antialiased;
-  line-height: 1.111;
+  line-height: $base-line-height;
 }

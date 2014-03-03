@@ -4,7 +4,10 @@
 //  _1_foundation/_skins.scss
 // ---------------------------------------------------------
 //
-//  Quick classes to change out backgrounds and colors.
+//  Quick classes to change out backgrounds, colors
+//  and borders.
+//
+//  Backgrounds and colors from http://clrs.cc
 //
 // ---------------------------------------------------------
 
@@ -47,3 +50,11 @@
 .silver, %silver            { color: $silver; }
 .gray, %gray                { color: $gray; }
 .black, %black              { color: $black; }
+
+
+// Borders
+.border, %border            { border: $border-width $border-style $border-color; }
+
+
+// Border Corner
+.rounded, %rounded          { border-radius: $border-radius; }

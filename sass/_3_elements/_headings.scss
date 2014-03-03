@@ -15,30 +15,30 @@
 
 h1 {
   font-weight: normal;
-  @include h-xxl;
+  @extend %text-xxl;
 }
 
 h2 {
   font-weight: normal;
-  @include h-xl;
+  @extend %text-xl;
 }
 
 h3 {
   font-weight: normal;
-  @include h-l;
+  @extend %text-l;
 }
 
 h4 {
   font-weight: normal;
-  @include h-m;
+  @extend %text-m;
 }
 
 h5 {
   font-weight: normal;
-  @include h-s;
+  @extend %text-s;
 }
 
 h6 {
   font-weight: normal;
-  @include h-xs;
+  @extend %text-xs;
 }

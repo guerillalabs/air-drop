@@ -153,16 +153,16 @@ input[type="radio"] {
 
 input {
   &::-webkit-input-placeholder {
-    color: $input-placeholder;
+    color: $placeholder-txt;
   }
   &:-moz-placeholder {
-    color: $input-placeholder;
+    color: $placeholder-txt;
   }
   &::-moz-placeholder {
-    color: $input-placeholder;
+    color: $placeholder-txt;
   }
   &:-ms-input-placeholder {
-    color: $input-placeholder;
+    color: $placeholder-txt;
   }
 }
 // Placeholders on focus
@@ -322,6 +322,6 @@ input:focus {
     background-position: 5% 50%;
     border-radius: .625em;
     padding: .44em .3125em .35em 1.75em;
-    @include text-xs;
+    @extend %text-xs;
   }
 }

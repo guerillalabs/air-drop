@@ -143,6 +143,24 @@ You can specify when styles in media queries shouldn't be sent to "fallback" bro
 }
 ```
 
+## Variables, Spacing and Typography
+
+The `sass/_1_foundations/_vars.scss` is very important for each project. This is where font sizes, dimensions, grid gutters and colors are all set.
+
+As much as possible, these variables should be used throughout your project to aid in maintenance and making changes.
+
+### Typography
+
+Some silent classes are provided for use in setting font-sizes throughout the site. Note that each silent class includes media queries, so that while we are using these with `@extends`, the media queries will still apply and fonts will resize responsively without extra markup.
+
+### Spacing
+
+Typically, we use multiples of the `$vertical-unit` variable for vertical spacing with text, and we use one of the REM based `$spacing` variables for horizontal spacing. This is to keep horizontal spacing (like for grid gutters) consistent across contexts where EMs would vary.
+
+### Colors
+
+Many color variables are provided by default, but there is also a `_shades.scss` mixin that allows you to quickly, and consistently, lighten and darken the colors throughout your site.
+
 ## Grids
 
 Air-Drop includes the excellent csswizardry-grids by Harry Roberts. Head over to [the github repo](https://github.com/csswizardry/csswizardry-grids/) for full instructions on usage.
