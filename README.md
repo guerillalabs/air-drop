@@ -117,6 +117,32 @@ To make an old IE stylesheet, set `$rems: false;` at the top of the file.
 
 **Important note:** if you use ems for media queries (and you should), make sure that they are always based off of the default browser text size and not the `$base-font-size`. So, something like `@media (min-width: em(480, 16)) {` should always be used.
 
+## Media Queries
+
+A media query mixin – `sass/_1_foundations/_mixins/_media-queries.scss` – is provided to ease working with older versions of IE. Use of the mixin is provided at the top of the file, but in brief, here's how they work:
+
+``` sass
+.test {
+    background: #fff;
+    @include media('screen and (min-width: 400px) and (max-width: 600px)') {
+        color: #000;
+    }
+}
+```
+
+The entire query part of the media query is passed as an argument. You can use variables for your dimensions by using interpolation – like #{$bp-small}
+
+You can specify when styles in media queries shouldn't be sent to "fallback" browsers.
+
+``` sass
+.test {
+    background: #fff;
+    @include media('screen and (min-width: 400px) and (max-width: 600px)', false) {
+        color: #000;
+    }
+}
+```
+
 ## Grids
 
 Air-Drop includes the excellent csswizardry-grids by Harry Roberts. Head over to [the github repo](https://github.com/csswizardry/csswizardry-grids/) for full instructions on usage.

@@ -14,15 +14,10 @@
 //  Sass would. Set the $no-queries variable at the top of
 //  your style sheet to override this.
 //
-//  For CSS files that should get both media query
-//  and fall-back styles together, use:
-//
-//  $no-queries: true;
-//
 //  For "Old IE" style sheets that shouldn't get the media
 //  queries (only the fall-back styles), use:
 //
-//  $no-queries: only;
+//  $no-queries: true;
 //
 //  Several arguments can be passed to alter the way the
 //  mixin behaves.
@@ -40,21 +35,6 @@
 //  an argument. You can use variables for your dimensions
 //  by using interpolation – like #{$bp-small}
 //
-//  Since Sass makes it difficult, we need to pass an
-//  argument if the media query is standing alone – only
-//  wrapping other styles, but not within a selector like
-//  the example above shows.
-//
-//  @include media('(min-width: 400px) and (max-width: 600px)', $wrap: true) {
-//      .test {
-//          color: #f00;
-//      }
-//  }
-//
-//  Note the "wrap" argument that indicated this is wrapping
-//  other elements. If you get an error when compiling, this
-//  is the likely culprit.
-//
 //  You can specify when styles in media queries shouldn't
 //  be sent to "fallback" browsers.
 //
@@ -67,16 +47,6 @@
 //
 //  Note the "no-query-fallback" argument.
 //
-//  You can also specify what selector should be prepended
-//  to fallback styles (when both are included in one stylesheet).
-//  We use '.lte-ie8' as the default.
-//
-//  @include media('(min-width: 400px) and (max-width: 600px)', $selector: '.no-mq') {
-//      .test {
-//          color: #f00;
-//      }
-//  }
-//
 // --------------------------------------------------------
 
 $no-queries: false !default;
@@ -84,28 +54,15 @@ $no-queries: false !default;
 
 
 
-@mixin media($query, $no-query-fallback: true, $wrap: false, $selector: '.lte-ie8') {
+@mixin media($query, $no-query-fallback: true) {
 
-    @if $no-queries != 'only'  {
+    @if $no-queries == false  {
         @media #{$query} {
             @content;
         }
     }
 
     @if $no-query-fallback == true and $no-queries == true {
-        @if $wrap == false {
-            #{$selector} & {
-                @content;
-            }
-        } @else {
-            #{$selector} {
-                @content;
-            }
-        }
-
-    }
-
-    @if $no-query-fallback == true and $no-queries == 'only' {
         @content;
     }
 }
