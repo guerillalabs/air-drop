@@ -13,73 +13,88 @@
 //
 //  For instance: four-up will set each child to 25%
 //
-//  Ups combined with grids will responsively stack at
-//  whatever width you've declared as $grid-stack-at-width
+//  Ups can be be used with the same responsive namespaces
+//  as grids, for example ('one-up medium--two-up large--four-up')
 //
 //  Example: Ups and grids
-//  <div class="gw two-up">
-//    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-//    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-//  </div><!--/gw-->
-//  <div class="gw three-up">
-//    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-//    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-//    <div class="g"><img src="http://fillmurray.com/500/300"></div>
-//  </div><!--/gw-->
+//  <div class="grid two-up">
+//    <div class="grid__item"><img src="http://fillmurray.com/500/300"></div><!--
+//    --><div class="grid__item"><img src="http://fillmurray.com/500/300"></div>
+//  </div><!--/grid-->
+//  <div class="grid three-up">
+//    <div class="grid__item"><img src="http://fillmurray.com/500/300"></div><!--
+//    --><div class="grid__item"><img src="http://fillmurray.com/500/300"></div><!--
+//    --><div class="grid__item"><img src="http://fillmurray.com/500/300"></div>
+//  </div><!--/grid-->
 //
 // -------------------------------------------------------
 
-// Two up
-.two-up > * {
-  width: 50%;
+
+
+@mixin ups($namespace:""){
+
+    // One up
+    #{$class-type}#{$namespace}one-up > * {
+        @extend #{$class-type}#{$namespace}one-whole;
+    }
+
+    // Two up
+    #{$class-type}#{$namespace}two-up > * {
+        @extend #{$class-type}#{$namespace}one-half;
+    }
+
+    // Three up
+    #{$class-type}#{$namespace}three-up > * {
+        @extend #{$class-type}#{$namespace}one-third;
+    }
+
+    // Four up
+    #{$class-type}#{$namespace}four-up > * {
+        @extend #{$class-type}#{$namespace}one-quarter;
+    }
+
+    // Five up
+    #{$class-type}#{$namespace}five-up > * {
+        @extend #{$class-type}#{$namespace}one-fifth;
+    }
+
+    // Six up
+    #{$class-type}#{$namespace}six-up > * {
+        @extend #{$class-type}#{$namespace}one-sixth;
+    }
+
+    // Eight up
+    #{$class-type}#{$namespace}eight-up > * {
+        @extend #{$class-type}#{$namespace}one-eighth;
+    }
+
+    // Ten up
+    #{$class-type}#{$namespace}ten-up > * {
+        @extend #{$class-type}#{$namespace}one-tenth;
+    }
+
+    // Twelve up
+    #{$class-type}#{$namespace}twelve-up > * {
+        @extend #{$class-type}#{$namespace}one-twelfth;
+    }
 }
 
-// Three up
-.three-up > * {
-  width: 33.333333%;
-}
 
-// Four up
-.four-up > * {
-  width: 25%;
-}
+/**
+ * Our regular, non-responsive ups classes.
+ */
+@include ups();
 
-// Five up
-.five-up > * {
-  width: 20%;
-}
 
-// Six up
-.six-up > * {
-  width: 16.6666666%;
-}
+/**
+ * Our responsive classes, if we have enabled them.
+ */
+@if $responsive == true{
 
-// Seven up
-.seven-up > * {
- width: 14.285714286%;
-}
+    @each $name in $breakpoint-has-widths {
+        @include grid-media-query($name) {
+           @include ups('#{$name}--');
+        }
+    }
 
-// Eight up
-.eight-up > * {
-  width: 12.5%;
-}
-
-// Nine up
-.nine-up > * {
-  width: 11.111111111%;
-}
-
-// Ten up
-.ten-up > * {
-  width: 10%;
-}
-
-// Eleven up
-.eleven-up > * {
- width: 9.090909091%;
-}
-
-// Twelve up
-.twelve-up > * {
-  width: 8.333333333%;
 }
