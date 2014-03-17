@@ -3,10 +3,21 @@ layout: blog
 ---
 {% include head.html %}
 {% include header.html %}
-<div class="container">
-    <article>
-        <h2>{{ page.title }} hi {{ relative }} hi</h2>
-        {{ content }}
-    </article>
-</div>
+
+    <!-- Site's Main Content-->
+    <main classs="site-main" role="main">
+
+        <!-- sample blog section.  Styles specific to this section will be in _5_sections/_blog.scss -->
+        <section class="blog">
+            <div class="container">
+
+                <h1>{{ page.title }}</h1>
+
+                {{ content }}
+
+            </div>
+        </section>
+
+    </main>
+
 {% include footer.html %}
