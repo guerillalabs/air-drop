@@ -29,7 +29,7 @@ $base-font-size: 16 !default;
 // Make px to rems using base-font-size
 // echo as: font-size: rem(#px);
 // if the base is another value, say 24px, write rem(12, 24)
-@function rem($target, $context: $base-font-size) {
+@function rem($target, $context: 16) {
     @if strip-units($target) == 0 { @return 0 }
     @else if not $rems { @return (round(strip-units($target))) * $absolute-sizing-unit }
     @else { @return (strip-units($target) / strip-units($context)) * 1rem }
