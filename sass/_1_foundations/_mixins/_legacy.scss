@@ -1,0 +1,33 @@
+//
+//   @legacy
+// --------------------------------------------------------
+//  _1_foundations/_mixins/_legacy.scss
+// --------------------------------------------------------
+//
+//  Use this mixin to write styles that are only intended
+//  for use on legacy browsers.
+//
+//  By default, this mixin does not put the contained styles
+//  in the stylesheet.
+//
+//  For "Old IE" style sheets that should get the styles, use:
+//
+//  $legacy: true;
+//
+// --------------------------------------------------------
+
+$legacy: false !default;
+
+
+
+
+@mixin legacy($for-legacy: true) {
+
+    @if $legacy == false and $for-legacy == false  {
+      @content;
+    }
+
+    @if $legacy == true and $for-legacy == true {
+      @content;
+    }
+}

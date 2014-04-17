@@ -29,7 +29,9 @@
     transform-origin: 23px 25px;
     z-index: 2005;
   }
-  .lte-ie8 & {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  @include legacy() {
+    .lte-ie8 & {
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    }
   }
 }
