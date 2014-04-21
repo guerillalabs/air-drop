@@ -34,8 +34,8 @@
   font-family: $font-name;
   font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
-  font-style: normal;
-  font-weight: normal;
+  font-style: normal !important;
+  font-weight: normal !important;
   text-decoration: none;
   text-rendering: optimizeLegibility;
 }
