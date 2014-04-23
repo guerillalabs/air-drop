@@ -81,71 +81,116 @@
 //
 // --------------------------------------------------------
 
-@mixin arrow( $position, $bg-color, $size, $border-color, $border-size ) {
+@mixin arrow( $position, $bg-color, $size, $border-color: false, $border-size: false ) {
 
-  &:before,
-  &:after {
-    @include triangle($size, $bg-color, $position);
-    content: " ";
-    pointer-events: none;
-    position: absolute;
-    z-index: 100;
+  @if $border-size != false  {
 
-    // If position is top
-    @if $position == "up" {
-      bottom: 100%;
-      left: 50%;
-      margin-left: -$size;
+
+    &:before,
+    &:after {
+      @include triangle($size, $bg-color, $position);
+      content: " ";
+      pointer-events: none;
+      position: absolute;
+
+      // If position is top
+      @if $position == "up" {
+        bottom: 100%;
+        left: 50%;
+        margin-left: -$size;
+      }
+
+      // if position is right
+      @if $position == "right" {
+        left: 100%;
+        top: 50%;
+        margin-top: -$size;
+      }
+
+      // If position is bottom
+      @if $position == "down" {
+        top: 100%;
+        left: 50%;
+        margin-left: -$size;
+      }
+
+      // If position is left
+      @if $position == "left" {
+        right: 100%;
+        top: 50%;
+        margin-top: -$size;
+      }
+
     }
 
-    // if position is right
-    @if $position == "right" {
-      left: 100%;
-      top: 50%;
-      margin-top: -$size;
+    $border-size: $size + ($border-size*1.5);
+
+    &:before {
+      @include triangle($border-size, $border-color, $position);
+
+      // If position is top
+      @if $position == "up" {
+        margin-left: -$border-size;
+      }
+
+      // if position is right
+      @if $position == "right" {
+        margin-top: -$border-size;
+      }
+
+      // If position is bottom
+      @if $position == "down" {
+        margin-left: -$border-size;
+      }
+
+      // If position is left
+      @if $position == "left" {
+        margin-top: -$border-size;
+      }
     }
 
-    // If position is bottom
-    @if $position == "down" {
-      top: 100%;
-      left: 50%;
-      margin-left: -$size;
+
+  } @else {
+
+
+    &:after {
+      @include triangle($size, $bg-color, $position);
+      content: " ";
+      pointer-events: none;
+      position: absolute;
+
+      // If position is top
+      @if $position == "up" {
+        bottom: 100%;
+        left: 50%;
+        margin-left: -$size;
+      }
+
+      // if position is right
+      @if $position == "right" {
+        left: 100%;
+        top: 50%;
+        margin-top: -$size;
+      }
+
+      // If position is bottom
+      @if $position == "down" {
+        top: 100%;
+        left: 50%;
+        margin-left: -$size;
+      }
+
+      // If position is left
+      @if $position == "left" {
+        right: 100%;
+        top: 50%;
+        margin-top: -$size;
+      }
+
     }
 
-    // If position is left
-    @if $position == "left" {
-      right: 100%;
-      top: 50%;
-      margin-top: -$size;
-    }
 
   }
 
-  $border-size: $size + ($border-size*1.5);
-
-  &:after {
-    @include triangle($border-size, $border-color, $position);
-    z-index: 90;
-
-    // If position is top
-    @if $position == "up" {
-      margin-left: -$border-size;;
-    }
-
-    // if position is right
-    @if $position == "right" {
-      margin-top: -$border-size;
-    }
-
-    // If position is bottom
-    @if $position == "down" {
-      margin-left: -$border-size;
-    }
-
-    // If position is left
-    @if $position == "left" {
-      margin-top: -$border-size;
-    }
-  }
 
 }
