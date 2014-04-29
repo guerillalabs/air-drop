@@ -11,8 +11,22 @@ source:      .
 destination: ./_site
 plugins:     ./_plugins
 layouts:     ./_layouts
-include:     ['.htaccess']
-exclude:     [ node_modules, Gruntfile.js, package.json, bower.json, README.md, TODO.md ]
+include:
+    - '.htaccess'
+    - _1_foundations
+    - _mixins
+    - _2_layout
+    - _3_elements
+    - _4_modules
+    - _5_sections
+    - '*.scss'
+exclude:
+    - node_modules
+    - Gruntfile.js
+    - package.json
+    - bower.json
+    - README.md
+    - TODO.md
 
 future:      true
 show_drafts: nil
