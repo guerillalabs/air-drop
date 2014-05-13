@@ -28,6 +28,10 @@ Next, run `bower install`. This will download jQuery and other third-party libra
 
 Running `grunt` will start the Jekyll server and the task that watches for changes to your files. The server is accessible from `localhost:4000` (or `0.0.0.0:4000` depending on which URL style you prefer). To kill the server, type `ctrl` + `c` in the terminal.
 
+### Important note for Github pages use
+
+If you're using this project on github pages, a small modification needs to be made to the `.gitignore` file. Open it and remove the line that says `vendor/`. This ensures that the front-end dependencies are on github when their Jekyll command runs — otherwise, your packages will not be available and moved into the _site folder at build time.
+
 ## URLs
 
 A big part of the concept for Air-Drop is to produce a static HTML site that can be sent anywhere. A traditional problem with that is how URLs are structured. I've always preferred absolute URLs (and you should, too), but they're only possible when your site is sitting at the root of a domain on a server – which isn't always the case.
