@@ -3,4 +3,5 @@ _site/
 .DS_Store
 node_modules/
 vendor/
+css/
 sass/*
