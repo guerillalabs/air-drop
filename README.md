@@ -44,7 +44,7 @@ You can also include other Sass libraries, as needed. Note that Air-Drop uses Au
 
 Air-Drop is set to not commit Sass files to the repository (to make it easier to develop the Air-Drop project), so you will want to remove the `sass/*` line from your `.gitignore` as you begin work if you are using git for version control.
 
-### Using Sasspool
+#### Using Sasspool
 
 Sasspool has a lot of functions and helpers that you will want to be aware of. Read the documentation on [the Sasspool page](https://github.com/guerillalabs/Sasspool) for full details on how to use it best.
 
