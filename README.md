@@ -26,15 +26,19 @@ When you first download the repo, you will want to open the project directory in
 
 Next, run `bower install`. This will download jQuery and other third-party libraries used in this project.
 
-Running `grunt` will start the Jekyll server and the task that watches for changes to your files. The server is accessible from `localhost:4000` (or `0.0.0.0:4000` depending on which URL style you prefer). To kill the server, type `ctrl` + `c` in the terminal.
+Running `grunt` will start the Jekyll server and the task that watches for changes to your files. The server is accessible from `localhost:4000` (or `0.0.0.0:4000` depending on which URL style you prefer). To kill the server, type `ctrl` + `c` in the terminal. (**Note:** the `grunt` command will fail if you run it at this point because no Sass files are present in the project. See 'Including a Sass Library' below for more information.)
 
 ### Important note for Github pages use
 
 If you're using this project on github pages, a small modification needs to be made to the `.gitignore` file. Open it and remove the line that says `vendor/`. This ensures that the front-end dependencies are on github when their Jekyll command runs — otherwise, your packages will not be available and moved into the _site folder at build time.
 
-## Including a Sass Library
+### Including a Sass Library
 
-Air-Drop was developed as a companion to the [Sasspool](https://github.com/guerillalabs/Sasspool) framework. To include Sasspool in your project, open the project directory in terminal and run `svn export https://github.com/guerillalabs/Sasspool/trunk/sass --force`. This will bring over the "sass" folder from the Sasspool repository (without any versioning history, as you will want to modify the files to suit your project). Air-Drop is configured to compile Sasspool files automatically, so once you run `grunt`, everything should work as expected.
+Air-Drop was developed as a companion to the [Sasspool](https://github.com/guerillalabs/Sasspool) framework. To include Sasspool in your project, open the project directory in terminal and run:
+
+`svn export https://github.com/guerillalabs/Sasspool/trunk/sass --force`
+
+This will bring over the "sass" folder from the Sasspool repository (without any versioning history, as you will want to modify the files to suit your project). Air-Drop is configured to compile Sasspool files automatically, so once you run `grunt`, everything should work as expected.
 
 You can also include other Sass libraries, as needed. Note that Air-Drop uses Autoprefixer, so you may want to visit your `Gruntfile.js` to make sure the settings meet the needs of your library.
 
